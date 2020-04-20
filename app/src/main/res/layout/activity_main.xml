@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="59dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:gravity="center_horizontal"
+                android:text="PROYECTO PRODUCTIVO"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/resultado"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/tituloNombre"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tituloLong"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="1dp"
+                    android:gravity="right"
+                    android:text="Nombre : "
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tvNombre"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tituloNombre"
+                    android:layout_marginStart="-2dp"
+                    android:layout_marginTop="-7dp"
+                    android:layout_toEndOf="@+id/tituloNombre"
+                    android:padding="2dp"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tituloLat"
+                    android:layout_width="73dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tituloNombre"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="6dp"
+                    android:gravity="right"
+                    android:text="Latitud   :  "
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/lat"
+                    android:layout_width="146dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tituloNombre"
+                    android:layout_alignEnd="@+id/tvNombre"
+                    android:layout_marginTop="6dp" />
+
+                <TextView
+                    android:id="@+id/tituloLong"
+                    android:layout_width="74dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tituloLat"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="-1dp"
+                    android:gravity="right"
+                    android:text="Longitud  :  "
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/longitud"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tituloLat"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toEndOf="@+id/tituloLong" />
+
+                <TextView
+                    android:id="@+id/tituloAlt"
+                    android:layout_width="73dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tituloLong"
+                    android:layout_marginLeft="35dp"
+                    android:gravity="right"
+                    android:text="Altitud  :  "
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/alt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tituloLong"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toEndOf="@+id/tituloAlt" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resultado"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:text="Cédula:"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/in"
+                android:layout_width="299dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/tv1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@drawable/borde_negro"
+                android:inputType="number"
+                android:padding="5px" />
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="299dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/in"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:text="Buscar"
+
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/titulodep"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Departamento:"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Spinner
+                android:id="@+id/departamento"
+                style="@style/spinner_style"
+                android:layout_width="299dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/titulodep"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:textSize="10sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/titulomuni"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/departamento"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="Municipio:"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Spinner
+                android:id="@+id/muni"
+                style="@style/spinner_style"
+                android:layout_width="299dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/titulomuni"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:textSize="10sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/titulorut"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/muni"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="Ruta:"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <Spinner
+                android:id="@+id/ruta"
+                style="@style/spinner_style"
+                android:layout_width="299dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/tituloRuta"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:textSize="10sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/titulocorre"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/muni"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="Corregimento/Vereda:"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/correg"
+                android:layout_width="299dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/titulocorre"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/borde_negro"
+                android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                android:inputType="textFilter"
+                android:maxLines="1"
+                android:padding="8px"
+                android:textSize="15sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tituloTele"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/correg"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="Telefono (celular):"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/telefono"
+                android:layout_width="299dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/tituloTele"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/borde_negro"
+                android:digits="-1234567890 "
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="8px"
+                android:textSize="15sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tituloMail"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/telefono"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="¿Nuevo titular?"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <RadioGroup
+                android:id="@+id/mail"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/borde_negro"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:textSize="15sp"
+                android:visibility="invisible">
+
+                <RadioButton
+                    android:id="@+id/radio_nuevo_titular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/radio_titular_antiguo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="NO" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/gris"
+        app:itemBackground="@color/gris"
+
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+</RelativeLayout>

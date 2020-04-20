@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ActFijos">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="false"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        android:layout_marginBottom="59dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:text="ACTIVOS FIJOS"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAsoandes"
+                android:lines="3"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"
+                android:text="Maquinaria y herramientas, mobiliario, equipos, empaques"
+                ></TextView>
+            <Button
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="ir"
+                android:text="Ir a Totales"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/L1"
+                android:layout_width="match_parent"
+                android:layout_height="319dp"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/CON1AF"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:ems="10"
+                    android:textSize="11sp"
+                    style="@style/spinner_style_und_medida" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/CAN1AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="CANT"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/UM1AF"
+                        style="@style/spinner_style_und_medida"
+                        android:layout_width="match_parent"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="UNIDAD MEDIDA"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/VSug1AF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+
+                    <EditText
+                        android:id="@+id/VU1AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="VALOR UNITARIO"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+
+                    <EditText
+                        android:id="@+id/VT1AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/gris"
+                        android:background="@color/colorAprobado"
+                        android:enabled="false"
+                        android:hint="VALOR TOTAL"
+
+                        android:inputType="none"
+                        android:singleLine="true"
+                        android:textSize="13sp" />
+                </LinearLayout>
+                <Button
+                    android:id="@+id/C1"
+                    android:layout_width="184dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boton"
+                    android:onClick="calcular"
+                    android:text="calcular"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="FUENTE:"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+                    <EditText
+                        android:id="@+id/PS1AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="PS"
+
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+                    <EditText
+                        android:id="@+id/HO1AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="HOGAR"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="VERIFICACION:"
+                    android:textAlignment="center" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/VERF1AF"
+                    style="@style/spinner_style"
+                    android:layout_width="181dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:entries="@array/verificacion"
+                    android:hint="VERIFICACION"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+    <LinearLayout
+        android:id="@+id/L2"
+        android:layout_below="@+id/L1"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="319dp"
+        android:background="@drawable/borderlayout">
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/CON2AF"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:ems="10"
+            android:textSize="14sp"
+            style="@style/spinner_style_und_medida" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/CAN2AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="CANT"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/UM2AF"
+                style="@style/spinner_style_und_medida"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="UNIDAD MEDIDA"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/VSug2AF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"/>
+            <EditText
+                android:id="@+id/VU2AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="VALOR UNITARIO"
+                android:singleLine="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"/>
+            <EditText
+                android:id="@+id/VT2AF"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:textSize="13sp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:textColor="@color/gris"
+                android:background="@color/colorAprobado"
+                android:ems="10"
+                android:hint="VALOR TOTAL"
+                android:inputType="none"
+                android:singleLine="true"
+                 />
+        </LinearLayout>
+        <Button
+            android:id="@+id/C2"
+
+            android:layout_width="184dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:background="@drawable/boton"
+            android:textSize="14sp"
+            android:text="calcular"
+            android:onClick="calcular"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textAlignment="center"
+            android:text="FUENTE:"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$" />
+            <EditText
+                android:id="@+id/PS2AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="PS"
+                android:singleLine="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$" />
+            <EditText
+                android:id="@+id/HO2AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="HOGAR"
+                android:singleLine="true" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textAlignment="center"
+            android:text="VERIFICACION:"
+            />
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/VERF2AF"
+            style="@style/spinner_style"
+            android:layout_width="181dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:entries="@array/verificacion"
+            android:hint="VERIFICACION"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/L3"
+                android:layout_width="match_parent"
+                android:layout_height="319dp"
+                android:layout_below="@+id/L2"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/CON3AF"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:ems="10"
+                    android:textSize="14sp"
+                    style="@style/spinner_style_und_medida" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/CAN3AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="CANT"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/UM3AF"
+                        style="@style/spinner_style_und_medida"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="UNIDAD MEDIDA"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/VSug3AF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+                    <EditText
+                        android:id="@+id/VU3AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="VALOR UNITARIO"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+                    <EditText
+                        android:id="@+id/VT3AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:textSize="13sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:textColor="@color/gris"
+                        android:background="@color/colorAprobado"
+                        android:enabled="false"
+                        android:hint="VALOR TOTAL"
+                        android:inputType="number"
+                        android:singleLine="true"
+                         />
+                </LinearLayout>
+                <Button
+                    android:id="@+id/C3"
+                    android:layout_width="184dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boton"
+                    android:text="calcular"
+                    android:textSize="14sp"
+                    android:onClick="calcular"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="FUENTE:"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+                    <EditText
+                        android:id="@+id/PS3AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="PS"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+                    <EditText
+                        android:id="@+id/HO3AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="HOGAR"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:textAlignment="center"
+                    android:text="VERIFICACION:"
+                    />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/VERF3AF"
+                    style="@style/spinner_style"
+                    android:layout_width="181dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:entries="@array/verificacion"
+                    android:hint="VERIFICACION"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+    <LinearLayout
+        android:id="@+id/L4"
+        android:layout_below="@+id/L3"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="319dp"
+        android:background="@drawable/borderlayout">
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/CON4AF"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:ems="10"
+            android:textSize="14sp"
+            style="@style/spinner_style_und_medida" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/CAN4AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="CANT"
+                android:singleLine="true" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/UM4AF"
+                style="@style/spinner_style_und_medida"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="UNIDAD MEDIDA"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/VSug4AF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"/>
+            <EditText
+                android:id="@+id/VU4AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="VALOR UNITARIO"
+                android:singleLine="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"/>
+            <EditText
+                android:id="@+id/VT4AF"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:textSize="13sp"
+                android:ems="10"
+                android:textColor="@color/gris"
+                android:background="@color/colorAprobado"
+                android:enabled="false"
+
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="VALOR TOTAL"
+                android:singleLine="true" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/C4"
+            android:textSize="14sp"
+            android:layout_width="184dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:background="@drawable/boton"
+            android:text="calcular"
+            android:onClick="calcular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textAlignment="center"
+            android:text="FUENTE:"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$" />
+            <EditText
+                android:id="@+id/PS4AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="PS"
+                android:singleLine="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$" />
+            <EditText
+                android:id="@+id/HO4AF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="HOGAR"
+                android:singleLine="true" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textAlignment="center"
+            android:text="VERIFICACION:"
+            />
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/VERF4AF"
+            style="@style/spinner_style"
+            android:layout_width="181dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:entries="@array/verificacion"
+            android:hint="VERIFICACION"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/L5"
+                android:layout_below="@+id/L4"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="319dp"
+                android:background="@drawable/borderlayout">
+                <EditText
+                    android:id="@+id/CON5AF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:layout_weight="1"
+                    android:hint="CONCEPTO"
+                    android:singleLine="true" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/CAN5AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:layout_weight="1"
+                        android:hint="CANT"
+                        android:singleLine="true" />
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/UM5AF"
+                        style="@style/spinner_style_und_medida"
+                        android:layout_width="match_parent"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:entries="@array/und_medida"
+                        android:hint="UNIDAD MEDIDA"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+                    <EditText
+                        android:id="@+id/VU5AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:layout_weight="1"
+                        android:hint="VALOR UNITARIO"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+                    <EditText
+                        android:id="@+id/VT5AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:textSize="13sp"
+                        android:ems="10"
+                        android:background="@color/colorAprobado"
+                        android:enabled="false"
+                        android:textColor="@color/gris"
+                        android:inputType="number"
+                        android:layout_weight="1"
+                        android:hint="VALOR TOTAL"
+                        android:singleLine="true" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:textAlignment="center"
+                    android:text="FUENTE:"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+                    <EditText
+                        android:id="@+id/PS5AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:layout_weight="1"
+                        android:hint="PS"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"/>
+                    <EditText
+                        android:id="@+id/HO5AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:layout_weight="1"
+                        android:hint="HOGAR"
+                        android:singleLine="true" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:textAlignment="center"
+                    android:text="VERIFICACION:"
+                    />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/VERF5AF"
+                    style="@style/spinner_style"
+                    android:layout_width="181dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:entries="@array/verificacion"
+                    android:hint="VERIFICACION"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+                <Button
+                    android:id="@+id/C5"
+                    android:textSize="14sp"
+                    android:layout_width="184dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boton"
+                    android:text="calcular"
+                    android:onClick="calcular"/>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/expandButton"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boton"
+                android:onClick="toogle"
+                android:text="" />
+            <com.github.aakira.expandablelayout.ExpandableWeightLayout
+                android:id="@+id/expandableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:background="@color/ic_launcher_background"
+                app:ael_expanded="false"
+                app:ael_duration="1000"
+                app:ael_interpolator="anticipateOvershoot">
+                <LinearLayout
+                    android:id="@+id/L5_1"
+                    android:layout_below="@+id/L4"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="319dp"
+                    android:background="@drawable/borderlayout">
+                    <EditText
+                        android:id="@+id/CON5_1AF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:inputType="text"
+                        android:layout_weight="1"
+                        android:hint="CONCEPTO"
+                        android:singleLine="true" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <EditText
+                            android:id="@+id/CAN5_1AF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="CANT"
+                            android:singleLine="true" />
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/UM5_1AF"
+                            style="@style/spinner_style_und_medida"
+                            android:layout_width="match_parent"
+                            android:layout_height="23dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:entries="@array/und_medida"
+                            android:hint="UNIDAD MEDIDA"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"/>
+                        <EditText
+                            android:id="@+id/VU5_1AF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="VALOR UNITARIO"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"/>
+                        <EditText
+                            android:id="@+id/VT5_1AF"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:textSize="13sp"
+                            android:ems="10"
+                            android:background="@color/colorAprobado"
+                            android:enabled="false"
+                            android:textColor="@color/gris"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="VALOR TOTAL"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:textAlignment="center"
+                        android:text="FUENTE:"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"/>
+                        <EditText
+                            android:id="@+id/PS5_1AF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="PS"
+                            android:singleLine="true" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"/>
+                        <EditText
+                            android:id="@+id/HO5_1AF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="HOGAR"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:textAlignment="center"
+                        android:text="VERIFICACION:"
+                        />
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/VERF5_1AF"
+                        style="@style/spinner_style"
+                        android:layout_width="181dp"
+                        android:layout_height="33dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:entries="@array/verificacion"
+                        android:hint="VERIFICACION"
+                        android:textAlignment="center"
+                        android:textSize="13sp" />
+                    <Button
+                        android:id="@+id/C5_1"
+                        android:textSize="13sp"
+                        android:layout_width="184dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/boton"
+                        android:text="calcular"
+                        android:onClick="calcular"/>
+                </LinearLayout>
+
+            </com.github.aakira.expandablelayout.ExpandableWeightLayout>
+    <LinearLayout
+        android:id="@+id/L6"
+        android:layout_below="@+id/L5"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="210dp"
+        android:background="@drawable/bordertotal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TOTAL                             :"/>
+        <EditText
+            android:layout_marginTop="8dp"
+            android:id="@+id/TOTAL_AF"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+
+            android:inputType="number"
+            android:textAlignment="center"
+
+            android:hint="VALOR TOTAL"
+            /></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TOTAL PS                       :"/>
+
+            <EditText
+            android:id="@+id/TOTAL_PS_AF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+                android:inputType="number"
+            android:textAlignment="center"
+                android:layout_weight="1"
+            android:textSize="14sp"
+            android:hint="TOTAL PS"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TOTAL HOGAR              :"/>
+            <EditText
+            android:id="@+id/TOTAL_HOGAR_AF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+                android:inputType="number"
+                android:layout_weight="1"
+            android:textAlignment="center"
+                android:textSize="14sp"
+            android:hint="TOTAL HOGAR"
+            />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+ </LinearLayout>
+
+    </ScrollView>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/gris"
+        app:itemBackground="@color/gris"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation_pasar" />
+</RelativeLayout>

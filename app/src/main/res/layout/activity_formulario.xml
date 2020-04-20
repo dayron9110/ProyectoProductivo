@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Formulario">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="59dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="49dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/borderlayout"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Tipo de proyecto" />
+
+            <Spinner
+                android:id="@+id/tipo_proyecto"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="18dp"
+                android:entries="@array/tipo_proy"
+                android:textSize="14sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tit_proyecto"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginStart="12dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/titulo_proyecto"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:background="@color/fondo"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ .,"
+                    android:ems="10"
+                    android:hint=" Titulo de proyecto"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/produc_principal"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginLeft="12dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/producto_principal"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:background="@color/fondo"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ .,"
+                    android:ems="10"
+                    android:hint=" Producto principal"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tituloTele"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="31dp"
+                android:text="Descrip. Sector Productivo:"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/sectorP"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="18dp"
+                android:padding="0.8dp"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:id="@+id/exp_actEcono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="31dp"
+                android:text="Cod. Actividad" />
+
+            <Spinner
+                android:id="@+id/codigo_actividad"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="18dp"
+                android:padding="0.8dp"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Descripcion proyecto" />
+
+            <Spinner
+                android:id="@+id/descripcion_proyecto"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:layout_marginStart="12dp"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Oportunidades Comerciales" />
+
+            <Spinner
+                android:id="@+id/oportunidades"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:layout_marginStart="12dp"
+                android:spinnerMode="dialog" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/gris"
+        app:itemBackground="@color/gris"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation_back_next" />
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borde_negro"
+    android:padding="0.4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearViewInsumos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0.7dp">
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/chkInsumoList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="0.8dp">
+            <EditText
+                android:id="@+id/CON1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:hint="CONCEPTO"
+                android:inputType="text"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/CAN1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:hint="CANT"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/UM1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:hint="UNIDAD MEDIDA"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/VU1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:hint="VALOR UNITARIO"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/VT1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:hint="VALOR TOTAL"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/PS1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:hint="PS"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/HO1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13sp"
+                android:inputType="text"
+                android:layout_weight="1"
+                android:hint="HOGAR"
+                android:singleLine="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="items">
+        <item>Seleccione</item>
+        <item>A.AGRICULTURA, GANADERÍA, CAZA, SILVICULTURA Y PESCA</item>
+        <item>C.INDUSTRIAS MANUFACTURERAS</item>
+        <item>E.DISTRIBUCIÓN DE AGUA, EVACUACIÓN Y TRATAMIENTO DE AGUAS RESIDUALES, GESTIÓN DE DESECHOS Y ACTIVIDADES DE SANEAMIENTO AMBIENTAL</item>
+        <item>F.CONSTRUCCIÓN</item>
+        <item>G.COMERCIO AL POR MAYOR Y AL POR MENOR, REPARACIÓN DE VEHÍCULOS AUTOMOTORES Y MOTOCICLETAS</item>
+        <item>H.TRANSPORTE Y ALMACENAMIENTO</item>
+        <item>I.ALOJAMIENTO Y SERVICIOS DE COMIDA</item>
+        <item>J.INFORMACIÓN Y COMUNICACIONES</item>
+        <!--        <item>P.EDUCACIÓN</item>-->
+        <item>Q.ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA Y DE ASISTENCIA SOCIAL</item>
+        <item>R.ACTIVIDADES ARTÍSTICAS, DE ENTRETENIMIENTO Y RECREACIÓN</item>
+        <item>S.OTRAS ACTIVIDADES DE SERVICIOS</item>
+        <item>T.ACTIVIDADES DE LOS HOGARES INDIVIDUALES EN CALIDAD DE EMPLEADORES, ACTIVIDADES NO DIFERENCIADAS DE LOS HOGARES INDIVIDUALES COMO PRODUCTORES DE BIENES Y SERVICIOS PARA USO PROPIO</item>
+    </string-array>
+
+    <string-array name="verificacion">
+        <item>Cumple</item>
+        <item>No Cumple</item>
+    </string-array>
+    <string-array name="empty_array">
+        <item>Seleccione</item>
+    </string-array>
+    <string-array name="actividad_agricultura">
+        <item>Seleccione</item>
+        <item>011.Cultivos agrícolas transitorios </item>
+        <item>0111.Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas </item>
+        <item>0112.Cultivo de arroz </item>
+        <item>0113.Cultivo de hortalizas, raíces y tubérculos </item>
+        <item>0114.Cultivo de tabaco </item>
+        <item>0115.Cultivo de plantas textiles </item>
+        <item>119.Otros cultivos transitorios n.c.p.</item>
+        <item>012.Cultivos agrícolas permanentes </item>
+        <item>0121.Cultivo de frutas tropicales y subtropicales</item>
+        <item>0122.Cultivo de plátano y banano</item>
+        <item>0123.Cultivo de café</item>
+        <item>0124.Cultivo de caña de azúcar</item>
+        <item>0125.Cultivo de flor de corte</item>
+        <item>0126.Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos</item>
+        <item>0127.Cultivo de plantas con las que se preparan bebidas</item>
+        <item>0128.Cultivo de especias y de plantas aromáticas y medicinales </item>
+        <item>0129.Otros cultivos permanentes n.c.p.</item>
+        <item>0130.Propagación de plantas (actividades de los viveros, excepto viveros forestales) </item>
+        <item>014.Ganadería </item>
+        <item>0141.Cría de ganado bovino y bufalino</item>
+        <item>0142.Cría de caballos y otros equinos </item>
+        <item>0143.Cría de ovejas y cabras </item>
+        <item>0144.Cría de ganado porcino</item>
+        <item>0145.Cría de aves de corral</item>
+        <item>0149.Cría de otros animales n.c.p.</item>
+        <item>0150.Explotación mixta (agrícola y pecuaria) </item>
+        <item>016.Actividades de apoyo a la agricultura y la ganadería, y actividades posteriores a la cosecha </item>
+        <item>0161.Actividades de apoyo a la agricultura </item>
+        <item>0162.Actividades de apoyo a la ganadería</item>
+        <item>0163.Actividades posteriores a la cosecha </item>
+        <item>0164.Tratamiento de semillas para propagación </item>
+        <item>0170.Caza ordinaria y mediante trampas y actividades de servicios conexas </item>
+        <item>0210.Silvicultura y otras actividades forestales</item>
+        <item>0220.Extracción de madera </item>
+        <item>0230.Recolección de productos forestales diferentes a la madera</item>
+        <item>0240.Servicios de apoyo a la silvicultura </item>
+        <item>031.Pesca </item>
+        <item>0311.Pesca marítima </item>
+        <item>0312.Pesca de agua dulce </item>
+        <item>032.Acuicultura </item>
+        <item>0321.Acuicultura marítima </item>
+        <item>0322.Acuicultura de agua dulce</item>
+    </string-array>
+
+    <string-array name="manufactureras">
+        <item>00.Seleccione</item>
+        <item>101.Procesamiento y conservación de carne, pescado, crustáceos y moluscos </item>
+        <item>1011.Procesamiento y conservación de carne y productos cárnicos</item>
+        <item>1012.Procesamiento y conservación de pescados, crustáceos y moluscos</item>
+        <item>1020.Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos</item>
+        <item>1030.Elaboración de aceites y grasas de origen vegetal y animal</item>
+        <item>1040.Elaboración de productos lácteos</item>
+        <item>105.Elaboración de productos de molinería, almidones y productos derivados del almidón</item>
+        <item>1051.Elaboración de productos de molinería</item>
+        <item>1052.Elaboración de almidones y productos derivados del almidón</item>
+        <item>106.Elaboración de productos de café</item>
+        <item>1061.Trilla de café</item>
+        <item>1062.Descafeinado, tostión y molienda del café</item>
+        <item>1063.Otros derivados del café</item>
+        <item>107.Elaboración de azúcar y panela</item>
+        <item>1071.Elaboración y refinación de azúcar</item>
+        <item>1072.Elaboración de panela</item>
+        <item>108.Elaboración de otros productos alimenticios</item>
+        <item>1081.Elaboración de productos de panadería</item>
+        <item>1082.Elaboración de cacao, chocolate y productos de confitería</item>
+        <item>1083.Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares</item>
+        <item>1084.Elaboración de comidas y platos preparados</item>
+        <item>1089.Elaboración de otros productos alimenticios n.c.p.</item>
+        <item>1090.Elaboración de alimentos preparados para animales</item>
+        <item>110.Elaboración de bebidas</item>
+        <item>1101.Destilación, rectificación y mezcla de bebidas alcohólicas</item>
+        <item>1102.Elaboración de bebidas fermentadas no destiladas</item>
+        <item>1103.Producción de malta, elaboración de cervezas y otras bebidas malteadas</item>
+        <item>1104.Elaboración de bebidas no alcohólicas, producción de aguas minerales y de otras aguas embotelladas</item>
+        <item>1101.Destilación, rectificación y mezcla de bebidas alcohólicas</item>
+        <item>1102.Elaboración de bebidas fermentadas no destiladas</item>
+        <item>1103.Producción de malta, elaboración de cervezas y otras bebidas malteadas</item>
+        <item>1104.Elaboración de bebidas no alcohólicas, producción de aguas minerales y de otras aguas embotelladas</item>
+        <item>1200.Elaboración de productos de tabaco</item>
+        <item>131.Preparación, hilatura, tejeduría y acabado de productos textiles</item>
+        <item>1311.Preparación e hilatura de fibras textiles</item>
+        <item>1312.Tejeduría de productos textiles</item>
+        <item>1313.Acabado de productos textiles</item>
+        <item>139.Fabricación de otros productos textiles</item>
+        <item>1391.Fabricación de tejidos de punto y ganchillo</item>
+        <item>1392.Confección de artículos con materiales textiles, excepto prendas de vestir</item>
+        <item>1393.Fabricación de tapetes y alfombras para pisos</item>
+        <item>1394.Fabricación de cuerdas, cordeles, cables, bramantes y redes</item>
+        <item>1399.Fabricación de otros artículos textiles n.c.p.</item>
+        <item>1410.Confección de prendas de vestir, excepto prendas de piel</item>
+        <item>1420.Fabricación de artículos de piel</item>
+        <item>1430.Fabricación de artículos de punto y ganchillo</item>
+        <item>151.Curtido y recurtido de cueros, fabricación de artículos de viaje, bolsos de mano y artículos similares, y fabricación de artículos de talabartería y guarnicionería, adobo y teñido de pieles</item>
+        <item>1511.Curtido y recurtido de cueros, recurtido y teñido de pieles</item>
+        <item>1512.Fabricación de artículos de viaje, bolsos de mano y artículos similares elaborados en cuero, y fabricación de artículos de talabartería y guarnicionería</item>
+        <item>1513.Fabricación de artículos de viaje, bolsos de mano y artículos similares, artículos de talabartería y guarnicionería elaborados en otros materiales</item>
+        <item>152.Fabricación de calzado</item>
+        <item>1521.Fabricación de calzado de cuero y piel, con cualquier tipo de suela</item>
+        <item>1522.Fabricación de otros tipos de calzado, excepto calzado de cuero y piel</item>
+        <item>1523.Fabricación de partes del calzado</item>
+        <item>1610.Aserrado, acepillado e impregnación de la madera</item>
+        <item>1620.Fabricación de hojas de madera para enchapado, fabricación de tableros contrachapados, tableros laminados, tableros de partículas y otros tableros y paneles</item>
+        <item>1630.Fabricación de partes y piezas de madera, de carpintería y ebanistería para la construcción</item>
+        <item>1640.Fabricación de recipientes de madera</item>
+        <item>1690.Fabricación de otros productos de madera, fabricación de artículos de corcho, cestería y espartería</item>
+        <item>170.Fabricación de papel, cartón y productos de papel y cartón</item>
+        <item>1701.Fabricación de pulpas (pastas) celulósicas, papel y cartón</item>
+        <item>1702.Fabricación de papel y cartón ondulado (corrugado), fabricación de envases, empaques y de embalajes de papel y cartón.</item>
+        <item>1709.Fabricación de otros artículos de papel y cartón</item>
+        <item>181.Actividades de impresión y actividades de servicios relacionados con la impresión</item>
+        <item>1811.Actividades de impresión</item>
+        <item>1812.Actividades de servicios relacionados con la impresión</item>
+        <item>1820.Producción de copias a partir de grabaciones originales </item>
+        <item>2100.Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico</item>
+        <item>221.Fabricación de productos de caucho</item>
+        <item>2229.Fabricación de artículos de plástico n.c.p.</item>
+        <item>2391.Fabricación de productos refractarios</item>
+        <item>2393.Fabricación de otros productos de cerámica y porcelana</item>
+        <item>2396.Corte, tallado y acabado de la piedra</item>
+        <item>2399.Fabricación de otros productos minerales no metálicos n.c.p.</item>
+        <item>259.Fabricación de otros productos elaborados de metal y actividades de servicios relacionadas con el trabajo de metales</item>
+        <item>2591.Forja, prensado, estampado y laminado de metal, pulvimetalurgia</item>
+        <item>2599.Fabricación de otros productos elaborados de metal n.c.p.</item>
+        <item>2750.Fabricación de aparatos de uso doméstico</item>
+        <item>2790.Fabricación de otros tipos de equipo eléctrico n.c.p.</item>
+        <item>281.Fabricación de maquinaria y equipo de uso general</item>
+        <item>2818.Fabricación de herramientas manuales con motor</item>
+        <item>2819.Fabricación de otros tipos de maquinaria y equipo de uso general n.c.p.</item>
+        <item>282.Fabricación de maquinaria y equipo de uso especial</item>
+        <item>30.Fabricación de otros tipos de equipo de transporte</item>
+        <item>301.Construcción de barcos y otras embarcaciones</item>
+        <item>3011.Construcción de barcos y de estructuras flotantes</item>
+        <item>3012.Construcción de embarcaciones de recreo y deporte</item>
+        <item>309.Fabricación de otros tipos de equipo de transporte n.c.p.</item>
+        <item>3092.Fabricación de bicicletas y de sillas de ruedas para personas con discapacidad</item>
+        <item>3099.Fabricación de otros tipos de equipo de transporte n.c.p.</item>
+        <item>31.Fabricación de muebles, colchones y somieres</item>
+        <item>3110.Fabricación de muebles </item>
+        <item>3120.Fabricación de colchones y somieres</item>
+        <item>32.Otras industrias manufactureras</item>
+        <item>3210.Fabricación de joyas, bisutería y artículos conexos</item>
+        <item>3220.Fabricación de instrumentos musicales</item>
+        <item>3230.Fabricación de artículos y equipo para la práctica del deporte</item>
+        <item>3240.Fabricación de juegos, juguetes y rompecabezas</item>
+        <item>3290.Otras industrias manufactureras n.c.p.</item>
+        <item>33.Instalación, mantenimiento y reparación especializado de maquinaria y equipo</item>
+        <item>331.Mantenimiento y reparación especializado de productos elaborados en metal y de maquinaria y equipo</item>
+        <item>3311.Mantenimiento y reparación especializado de productos elaborados en metal</item>
+        <item>3312.Mantenimiento y reparación especializado de maquinaria y equipo</item>
+        <item>3313.Mantenimiento y reparación especializado de equipo electrónico y óptico</item>
+        <item>3314.Mantenimiento y reparación especializado de equipo eléctrico</item>
+        <item>3315.Mantenimiento y reparación especializado de equipo de transporte, excepto los vehículos automotores, motocicletas y bicicletas</item>
+        <item>3319.Mantenimiento y reparación de otros tipos de equipos y sus componentes n.c.p.</item>
+        <item>332.Instalación especializada de maquinaria y equipo industrial </item>
+    </string-array>
+    <string-array name="trata_aguas_sane_amb">
+        <item>00.Seleccione</item>
+        <item>381.Recolección de desechos</item>
+        <item>3811.Recolección de desechos no peligrosos</item>
+        <item>3821.Tratamiento y disposición de desechos no peligrosos</item>
+        <item>3830.Recuperación de materiales</item>
+        <item>3900.Actividades de saneamiento ambiental y otros servicios de gestión de desechos</item>
+    </string-array>
+    <string-array name="construccion">
+        <item>00.Seleccione</item>
+        <item>432.Instalaciones eléctricas, de fontanería y otras instalaciones especializadas</item>
+        <item>4321.Instalaciones eléctricas</item>
+        <item>4322.Instalaciones de fontanería, calefacción y aire acondicionado</item>
+        <item>4329.Otras instalaciones especializadas</item>
+        <item>4330.Terminación y acabado de edificios y obras de ingeniería civil</item>
+        <item>4390.Otras actividades especializadas para la construcción de edificios y obras de ingeniería civil</item>
+    </string-array>
+    <string-array name="comer_auto_moto">
+        <item>00.Seleccione</item>
+        <item>45.Comercio, mantenimiento y reparación de vehículos automotores y motocicletas, sus partes, piezas y accesorios</item>
+        <item>4520.Mantenimiento y reparación de vehículos automotores</item>
+        <item>4542.Mantenimiento y reparación de motocicletas y de sus partes y piezas</item>
+        <item>4620.Comercio al por mayor de materias primas agropecuarias, animales vivos</item>
+        <item>463.Comercio al por mayor de alimentos, bebidas y tabaco</item>
+        <item>4631.Comercio al por mayor de productos alimenticios</item>
+        <item>4632.Comercio al por mayor de bebidas y tabaco</item>
+        <item>464.Comercio al por mayor de artículos y enseres domésticos (incluidas prendas de vestir)</item>
+        <item>4641.Comercio al por mayor de productos textiles, productos confeccionados para uso doméstico</item>
+        <item>4642.Comercio al por mayor de prendas de vestir</item>
+        <item>4643.Comercio al por mayor de calzado</item>
+        <item>4644.Comercio al por mayor de aparatos y equipo de uso doméstico</item>
+        <item>4645.Comercio al por mayor de productos farmacéuticos, medicinales, cosméticos y de tocador</item>
+        <item>4649.Comercio al por mayor de otros utensilios domésticos n.c.p.</item>
+        <item>465.Comercio al por mayor de maquinaria y equipo </item>
+        <item>4651.Comercio al por mayor de computadores, equipo periférico y programas de informática</item>
+        <item>4652.Comercio al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones</item>
+        <item>4653.Comercio al por mayor de maquinaria y equipo agropecuarios</item>
+        <item>4659.Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p.</item>
+        <item>466.Comercio al por mayor especializado de otros productos</item>
+        <item>4661.Comercio al por mayor de combustibles sólidos, líquidos, gaseosos y productos conexos</item>
+        <item>4662.Comercio al por mayor de metales y productos metalíferos</item>
+        <item>4663.Comercio al por mayor de materiales de construcción, artículos de ferretería, pinturas, productos de vidrio, equipo y materiales de fontanería y calefacción</item>
+        <item>4664.Comercio al por mayor de productos químicos básicos, cauchos y plásticos en formas primarias y productos químicos de uso agropecuario</item>
+        <item>4665.Comercio al por mayor de desperdicios, desechos y chatarra</item>
+        <item>4669.Comercio al por mayor de otros productos n.c.p.</item>
+        <item>4690.Comercio al por mayor no especializado</item>
+        <item>471.Comercio al por menor en establecimientos no especializados</item>
+        <item>4711.Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas o tabaco</item>
+        <item>4719.Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (víveres en general), bebidas y tabaco</item>
+        <item>472.Comercio al por menor de alimentos (víveres en general), bebidas y tabaco, en establecimientos especializados</item>
+        <item>4721.Comercio al por menor de productos agrícolas para el consumo en establecimientos especializados</item>
+        <item>4722.Comercio al por menor de leche, productos lácteos y huevos, en establecimientos especializados</item>
+        <item>4723.Comercio al por menor de carnes (incluye aves de corral), productos cárnicos, pescados y productos de mar, en establecimientos especializados</item>
+        <item>4724.Comercio al por menor de bebidas y productos del tabaco, en establecimientos especializados</item>
+        <item>4729.Comercio al por menor de otros productos alimenticios n.c.p., en establecimientos especializados</item>
+        <item>473.Comercio al por menor de combustible, lubricantes, aditivos y productos de limpieza para automotores, en establecimientos especializados</item>
+        <item>4731.Comercio al por menor de combustible para automotores</item>
+        <item>4732.Comercio al por menor de lubricantes (aceites, grasas), aditivos y productos de limpieza para vehículos automotores</item>
+        <item>474.Comercio al por menor de equipos de informática y de comunicaciones, en establecimientos especializados</item>
+        <item>4741.Comercio al por menor de computadores, equipos periféricos, programas de informática y equipos de telecomunicaciones en establecimientos especializados</item>
+        <item>4742.Comercio al por menor de equipos y aparatos de sonido y de video, en establecimientos especializados</item>
+        <item>475.Comercio al por menor de otros enseres domésticos en establecimientos especializados</item>
+        <item>4751.Comercio al por menor de productos textiles en establecimientos especializados</item>
+        <item>4752.Comercio al por menor de artículos de ferretería, pinturas y productos de vidrio en establecimientos especializados</item>
+        <item>4753.Comercio al por menor de tapices, alfombras y cubrimientos para paredes y pisos en establecimientos especializados</item>
+        <item>4754.Comercio al por menor de electrodomésticos y gasodomésticos de uso doméstico, muebles y equipos de iluminación</item>
+        <item>4755.Comercio al por menor de artículos y utensilios de uso doméstico</item>
+        <item>4759.Comercio al por menor de otros artículos domésticos en establecimientos especializados</item>
+        <item>476.Comercio al por menor de artículos culturales y de entretenimiento, en establecimientos especializados</item>
+        <item>4761.Comercio al por menor de libros, periódicos, materiales y artículos de papelería y escritorio, en establecimientos especializados</item>
+        <item>4762.Comercio al por menor de artículos deportivos, en establecimientos especializados </item>
+        <item>4769.Comercio al por menor de otros artículos culturales y de entretenimiento n.c.p. en establecimientos especializados</item>
+        <item>477.Comercio al por menor de otros productos en establecimientos especializados</item>
+        <item>4771.Comercio al por menor de prendas de vestir y sus accesorios (incluye artículos de piel) en establecimientos especializados</item>
+        <item>4772.Comercio al por menor de todo tipo de calzado y artículos de cuero y sucedáneos del cuero en establecimientos especializados.</item>
+        <item>4773.Comercio al por menor de productos farmacéuticos y medicinales, cosméticos y artículos de tocador en establecimientos especializados</item>
+        <item>4774.Comercio al por menor de otros productos nuevos en establecimientos especializados</item>
+        <item>478.Comercio al por menor en puestos de venta móviles</item>
+        <item>4781.Comercio al por menor de alimentos, bebidas y tabaco, en puestos de venta móviles</item>
+        <item>4782.Comercio al por menor de productos textiles, prendas de vestir y calzado, en puestos de venta móviles</item>
+        <item>479.Comercio al por menor no realizado en establecimientos, puestos de venta o mercados</item>
+        <item>4791.Comercio al por menor realizado a través de Internet</item>
+        <item>4799.Otros tipos de comercio al por menor no realizado en establecimientos, puestos de venta o mercados.</item>
+
+    </string-array>
+    <string-array name="trans_almacena">
+        <item>00.Seleccione</item>
+        <item>50.Transporte acuático</item>
+        <item>501.Transporte marítimo y de cabotaje</item>
+        <item>5011.Transporte de pasajeros marítimo y de cabotaje </item>
+        <item>5012.Transporte de carga marítimo y de cabotaje </item>
+        <item>502.Transporte fluvial</item>
+        <item>5021.Transporte fluvial de pasajeros</item>
+        <item>5022.Transporte fluvial de carga</item>
+
+        <item>5310.Actividades postales nacionales</item>
+        <item>5320.Actividades de mensajería</item>
+
+    </string-array>
+    <string-array name="alojamiento_comida">
+        <item>00.Seleccione</item>
+        <item>551.Actividades de alojamiento de estancias cortas</item>
+        <item>5511.Alojamiento en hoteles </item>
+        <item>5513.Alojamiento en centros vacacionales </item>
+        <item>5514.Alojamiento rural</item>
+        <item>5520.Actividades de zonas de camping y parques para vehículos recreacionales</item>
+        <item>5590.Otros tipos de alojamiento n.c.p.</item>
+        <item>56.Actividades de servicios de comidas y bebidas</item>
+        <item>561.Actividades de restaurantes, cafeterías y servicio móvil de comidas</item>
+        <item>5611.Expendio a la mesa de comidas preparadas</item>
+        <item>5612.Expendio por autoservicio de comidas preparadas</item>
+        <item>5613.Expendio de comidas preparadas en cafeterías</item>
+        <item>5619.Otros tipos de expendio de comidas preparadas n.c.p.</item>
+        <item>562.Actividades de catering para eventos y otros servicios de comidas</item>
+        <item>5621.Catering para eventos</item>
+        <item>5629.Actividades de otros servicios de comidas</item>
+        <item>5630.Expendio de bebidas alcohólicas para el consumo dentro del establecimiento</item>
+    </string-array>
+
+    <string-array name="info_comunicacion">
+        <item>00.Seleccione</item>
+        <item>59.Actividades cinematográficas, de video y producción de programas de televisión, grabación de sonido y edición de música</item>
+        <item>591.Actividades de producción de películas cinematográficas, video y producción de programas, anuncios y comerciales de televisión</item>
+        <item>5914.Actividades de exhibición de películas cinematográficas y videos</item>
+        <item>5920.Actividades de grabación de sonido y edición de música</item>
+        <item>60.Actividades de programación, transmisión y/o difusión</item>
+        <item>6010.Actividades de programación y transmisión en el servicio de radiodifusión sonora</item>
+        <item>6020.Actividades de programación y transmisión de televisión</item>
+        <item>6202.Actividades de consultoría informática y actividades de administración de instalaciones informáticas</item>
+        <item>6209.Otras actividades de tecnologías de información y actividades de servicios informáticos</item>
+        <item>63.Actividades de servicios de información</item>
+        <item>6312.Portales web</item>
+        <item>639.Otras actividades de servicio de información</item>
+
+    </string-array>
+
+
+    <string-array name="salud_asis_social">
+        <item>00.Seleccione</item>
+        <item>8692.Actividades de apoyo terapéutico</item>
+        <item>8699.Otras actividades de atención de la salud humana</item>
+        <item>87.Actividades de atención residencial medicalizada</item>
+        <item>8710.Actividades de atención residencial medicalizada de tipo general</item>
+        <item>8720.Actividades de atención residencial, para el cuidado de pacientes con retardo mental, enfermedad mental y consumo de sustancias psicoactivas</item>
+        <item>8730.Actividades de atención en instituciones para el cuidado de personas mayores y/o discapacitadas</item>
+        <item>8790.Otras actividades de atención en instituciones con alojamiento</item>
+        <item>88.Actividades de asistencia social sin alojamiento</item>
+        <item>8810.Actividades de asistencia social sin alojamiento para personas mayores y discapacitadas</item>
+        <item>8890.Otras actividades de asistencia social sin alojamiento</item>
+
+    </string-array>
+
+    <string-array name="entretenimiento">
+        <item>00.Seleccione</item>
+        <item>900.Actividades creativas, artísticas y de entretenimiento </item>
+        <item>9001.Creación literaria</item>
+        <item>9002.Creación musical</item>
+        <item>9003.Creación teatral</item>
+        <item>9004.Creación audiovisual</item>
+        <item>9005.Artes plásticas y visuales</item>
+        <item>9006.Actividades teatrales</item>
+        <item>9007.Actividades de espectáculos musicales en vivo</item>
+        <item>9008.Otras actividades de espectáculos en vivo</item>
+        <item>91.Actividades de bibliotecas, archivos, museos y otras actividades culturales</item>
+        <item>910.Actividades de bibliotecas, archivos, museos y otras actividades culturales</item>
+        <item>9101.Actividades de bibliotecas y archivos</item>
+        <item>9102.Actividades y funcionamiento de museos, conservación de edificios y sitios históricos</item>
+        <item>9103.Actividades de jardines botánicos, zoológicos y reservas naturales</item>
+        <item>92.Actividades de juegos de azar y apuestas</item>
+        <item>9200.Actividades de juegos de azar y apuestas</item>
+        <item>93.Actividades deportivas y actividades recreativas y de esparcimiento</item>
+        <item>931.Actividades deportivas</item>
+        <item>9311.Gestión de instalaciones deportivas</item>
+        <item>9312.Actividades de clubes deportivos</item>
+        <item>9319.Otras actividades deportivas</item>
+        <item>932.Otras actividades recreativas y de esparcimiento</item>
+        <item>9321.Actividades de parques de atracciones y parques temáticos</item>
+        <item>9329.Otras actividades recreativas y de esparcimiento n.c.p.</item>
+    </string-array>
+
+    <string-array name="otras_act_serv">
+        <item>00.Seleccione</item>
+        <item>941.Actividades de asociaciones empresariales y de empleadores,y asociaciones profesionales </item>
+        <item>9411.Actividades de asociaciones empresariales y de empleadores</item>
+        <item>9412.Actividades de asociaciones profesionales</item>
+        <item>9420.Actividades de sindicatos de empleados</item>
+        <item>949.Actividades de otras asociaciones</item>
+        <item>9491.Actividades de asociaciones religiosas</item>
+        <item>9492.Actividades de asociaciones políticas</item>
+        <item>9499.Actividades de otras asociaciones n.c.p.</item>
+        <item>95.Mantenimiento y reparación de computadores, efectos personales y enseres domésticos</item>
+        <item>951.Mantenimiento y reparación de computadores y equipo de comunicaciones</item>
+        <item>9511.Mantenimiento y reparación de computadores y de equipo periférico</item>
+        <item>9512.Mantenimiento y reparación de equipos de comunicación</item>
+        <item>952.Mantenimiento y reparación de efectos personales y enseres domésticos</item>
+        <item>9521.Mantenimiento y reparación de aparatos electrónicos de consumo</item>
+        <item>9522.Mantenimiento y reparación de aparatos y equipos domésticos y de jardinería </item>
+        <item>9523.Reparación de calzado y artículos de cuero</item>
+        <item>9524.Reparación de muebles y accesorios para el hogar</item>
+        <item>9529.Mantenimiento y reparación de otros efectos personales y enseres domésticos</item>
+        <item>96.Otras actividades de servicios personales</item>
+        <item>960.Otras actividades de servicios personales</item>
+        <item>9601.Lavado y limpieza, incluso la limpieza en seco, de productos textiles y de piel</item>
+        <item>9602.Peluquería y otros tratamientos de belleza</item>
+        <item>9603.Pompas fúnebres y actividades relacionadas</item>
+        <item>9609.Otras actividades de servicios personales n.c.p.</item>
+    </string-array>
+    <string-array name="perso_domestico">
+        <item>00.Seleccione</item>
+        <item>9700.Actividades de los hogares individuales como empleadores de personal doméstico</item>
+        <item>98.Actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio</item>
+        <item>9810.Actividades no diferenciadas de los hogares individuales como productores de bienes para uso propio</item>
+        <item>9820.Actividades no diferenciadas de los hogares individuales como productores de servicios para uso propio</item>
+    </string-array>
+
+
+    <string-array name="und_medida">
+        <item>U.medida..........</item>
+        <item>Unidad</item>
+        <item>rollo</item>
+        <item>kg</item>
+        <item>litro</item>
+        <item>galon</item>
+        <item>mts(metro)</item>
+        <item>bulto</item>
+        <item>caja</item>
+        <item>pulg</item>
+        <item>cm</item>
+        <item>onza</item>
+        <item>gr</item>
+        <item>m2</item>
+        <item>cm2</item>
+        <item>lb(libra)</item>
+        <item>m3</item>
+        <item>mm3</item>
+        <item>ml</item>
+        <item>docena</item>
+        <item>frasco</item>
+        <item>barril</item>
+        <item>watts</item>
+        <item>Volts</item>
+        <item>Amperio</item>
+        <item>1/4 pulg</item>
+        <item>3/4 pulg</item>
+        <item>3/8 pulg</item>
+        <item>5/8 pulg</item>
+        <item>1/2 pulg</item>
+        <item>1 1/2 pulg</item>
+        <item>2 1/2 pulg</item>
+        <item>3 1/2 pulg</item>
+        <item>4 1/2 pulg</item>
+        <item>1 1/8 pulg</item>
+        <item>1 3/8 pulg</item>
+        <item>1 1/4 pulg</item>
+        <item>1 3/4 pulg</item>
+        <item>5/16 pulg</item>
+        <item>7/8 pulg</item>
+        <item>7/16 pulg</item>
+
+    </string-array>
+    <string-array name="tipo_proy">
+        <item>Seleccione</item>
+        <item>Fortalecimiento</item>
+        <item>Emprendimiento</item>
+    </string-array>
+</resources>

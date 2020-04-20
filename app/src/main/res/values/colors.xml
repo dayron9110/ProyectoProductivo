@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorsePaso">#ddc14f6a</color>
+    <color name="colorAsoandes">#9c64cadc</color>
+    <color name="colorAprobado">#a5bfe2ea</color>
+
+    <color name="colorAccent">#47505E</color>
+    <color name="black">#000000</color>
+    <color name="gris">#fa737373</color>
+    <color name="fondo">#fae7e6e6</color>
+    <color name="white">#FFFFFF</color>
+</resources>

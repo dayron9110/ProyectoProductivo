@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".Inversion">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="3. INVERSION A REALIZAR"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_above="@id/LL"
+        />
+<LinearLayout
+    android:id="@+id/LL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/GaPr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_centerHorizontal="true"
+        android:text="GASTOS PREOPERATIVOS"/>
+    <Button
+        android:id="@+id/CaTr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="CAPITAL DE TRABAJO"/>
+    <Button
+        android:id="@+id/AcFi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="ACTIVOS FIJOS"/>
+    <Button
+        android:id="@+id/Mer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="MERCADEO"/>
+    <Button
+        android:id="@+id/SeTr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEGURIDAD EN EL TRABAJO"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="118dp"
+        android:text="Nota: Despues de haber de ingresado a los 5 botones, pulse el boton 'Concep Tec.' de la barra innferior"
+        ></TextView>
+</LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/gris"
+        app:itemBackground="@color/gris"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation_act" />
+
+
+</RelativeLayout>

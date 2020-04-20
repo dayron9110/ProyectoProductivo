@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navegacion"
+        android:icon="@drawable/list"
+        android:title="Revisar" />
+    <!--<item
+        android:id="@+id/otro"
+        android:icon="@drawable/pdf_icon"
+        android:title="PDF" />-->
+    <item
+        android:id="@+id/next"
+        android:icon="@drawable/arrow_white"
+        android:title="Siguiente" />
+</menu>

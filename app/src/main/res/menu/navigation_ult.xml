@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+      <item
+
+        android:id="@+id/navegacion"
+          android:icon="@drawable/arrow_back"
+        android:title="Atras"/>
+
+    <item
+
+        android:id="@+id/otro"
+        android:title=""/>
+
+
+    <item
+        android:id="@+id/next"
+
+        android:title=""/>
+</menu>
