@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatSpinner;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,9 +27,10 @@ public class Formulario extends AppCompatActivity {
     TextView cod_sec;
     Intent intent;
     private EditText ediTextTituloProyecto, ediTextProdPrincipal, codAct, descAct;
-    private Spinner spinnerTipoProyecto, descPP, oport;
+    private Spinner spinnerTipoProyecto;
     private Spinner spinnerSectorProductivo;
     private Spinner spinnerCodigoActividad;
+    private AutoCompleteTextView autoCompleteDescripcionProyecto, autoCompleteTextViewOportComerciales;
     String text, SECT, ACT;
     String[] tokens1, tokens2;
     BottomNavigationView btnNV;
@@ -55,19 +56,21 @@ public class Formulario extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.items, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSectorProductivo.setAdapter(adapter);
-        descPP = findViewById(R.id.descripcion_proyecto);
-        oport = findViewById(R.id.oportunidades);
+        autoCompleteTextViewOportComerciales = findViewById(R.id.autoComplete_oportunidades_comerciales);
         sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         sharedPreferencesRD = getSharedPreferences("recuperadatos", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editorRD = sharedPreferencesRD.edit();
         poblarListas();
+        autoCompleteDescripcionProyecto = findViewById(R.id.autoComplete_desc_proyecto);
         dataAdapter = new ArrayAdapter<>(this, R.layout.textview1, list);
         dataAdapter.setDropDownViewResource(R.layout.textview1);
-        descPP.setAdapter(dataAdapter);
+        autoCompleteDescripcionProyecto.setAdapter(dataAdapter);
+        autoCompleteDescripcionProyecto.setThreshold(1);
         dataAdapter2 = new ArrayAdapter<String>(this, R.layout.textview1, list2);
         dataAdapter2.setDropDownViewResource(R.layout.textview1);
-        oport.setAdapter(dataAdapter2);
+        autoCompleteTextViewOportComerciales.setAdapter(dataAdapter2);
+        autoCompleteTextViewOportComerciales.setThreshold(1);
         spinnerSectorProductivo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -269,10 +272,10 @@ public class Formulario extends AppCompatActivity {
             ediTextTituloProyecto.setText(titulop);
             String prodprinc = sharedPreferencesRD.getString("prodPrinc", "");
             ediTextProdPrincipal.setText(prodprinc);
-            int descrpp = sharedPreferencesRD.getInt("descrPP", 0);
-            descPP.setSelection(descrpp);
-            int opor = sharedPreferencesRD.getInt("oportunidades", 0);
-            oport.setSelection(opor);
+            String descrpp = sharedPreferencesRD.getString("descrPP", "");
+            autoCompleteDescripcionProyecto.setText(descrpp);
+            String oportComerciales = sharedPreferencesRD.getString("oportunidades", "");
+            autoCompleteTextViewOportComerciales.setText(oportComerciales);
             int SP_sect = sharedPreferencesRD.getInt("spinnerSect", -1);
             if (SP_sect != -1) {
                 spinnerSectorProductivo.setSelection(SP_sect);
@@ -293,6 +296,10 @@ public class Formulario extends AppCompatActivity {
             Toast.makeText(this, "Seleccione el sector productivo", Toast.LENGTH_SHORT).show();
         } else if (spinnerCodigoActividad.getSelectedItem().toString().matches("Seleccione")) {
             Toast.makeText(this, "Seleccione la actividad", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(autoCompleteDescripcionProyecto.getText().toString().trim())) {
+            Toast.makeText(this, "Dígite la descripción del proyecto", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(autoCompleteTextViewOportComerciales.getText().toString().trim())) {
+            Toast.makeText(this, "Dígite las oportunidades comerciales del proyecto", Toast.LENGTH_SHORT).show();
         } else {
             editor.putString("tipoP", spinnerTipoProyecto.getSelectedItem().toString().trim());
             editor.putString("tituloP", ediTextTituloProyecto.getText().toString().trim());
@@ -301,16 +308,16 @@ public class Formulario extends AppCompatActivity {
             editor.putString("descrSector", tokens1[1]);
             editor.putString("codAct", tokens2[0]);
             editor.putString("descrAct", tokens2[1]);
-            editor.putString("descrPP", descPP.getSelectedItem().toString().trim());
-            editor.putString("oportunidades", oport.getSelectedItem().toString());
+            editor.putString("descrPP", autoCompleteDescripcionProyecto.getText().toString().trim());
+            editor.putString("oportunidades", autoCompleteTextViewOportComerciales.getText().toString().trim());
             editor.commit();
             editorRD.putInt("tipoP", spinnerTipoProyecto.getSelectedItemPosition());
             editorRD.putString("tituloP", ediTextTituloProyecto.getText().toString().trim());
             editorRD.putString("prodPrinc", ediTextProdPrincipal.getText().toString().trim());
             editorRD.putInt("spinnerSect", spinnerSectorProductivo.getSelectedItemPosition());
             editorRD.putInt("spinnerAct", spinnerCodigoActividad.getSelectedItemPosition());
-            editorRD.putInt("descrPP", descPP.getSelectedItemPosition());
-            editorRD.putInt("oportunidades", oport.getSelectedItemPosition());
+            editorRD.putString("descrPP", autoCompleteDescripcionProyecto.getText().toString().trim());
+            editorRD.putString("oportunidades", autoCompleteTextViewOportComerciales.getText().toString().trim());
             editorRD.commit();
             Intent intent = new Intent(Formulario.this, Inversion.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);

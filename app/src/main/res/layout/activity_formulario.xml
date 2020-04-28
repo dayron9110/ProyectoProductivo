@@ -124,15 +124,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:text="Descripcion proyecto" />
+                android:text="Descripción proyecto" />
 
-            <Spinner
-                android:id="@+id/descripcion_proyecto"
-                style="@style/spinner_style"
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete_desc_proyecto"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="12dp"
-                android:spinnerMode="dialog" />
+                android:hint="Descripción proyecto" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,13 +139,13 @@
                 android:layout_marginStart="15dp"
                 android:text="Oportunidades Comerciales" />
 
-            <Spinner
-                android:id="@+id/oportunidades"
-                style="@style/spinner_style"
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete_oportunidades_comerciales"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="12dp"
-                android:spinnerMode="dialog" />
+                android:hint="Oportunidades comerciales" />
+
         </LinearLayout>
     </ScrollView>
 
