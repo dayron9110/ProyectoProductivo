@@ -336,7 +336,6 @@
         android:layout_marginBottom="0dp"
         android:background="@color/gris"
         app:itemBackground="@color/gris"
-
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
