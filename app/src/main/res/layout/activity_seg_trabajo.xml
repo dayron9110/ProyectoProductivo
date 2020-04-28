@@ -5,79 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SegTrabajo">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="59dp"
         android:fadeScrollbars="false"
         android:scrollbarThumbVertical="@drawable/scrollbar"
-        android:layout_marginBottom="59dp"
         tools:layout_editor_absoluteX="43dp"
         tools:layout_editor_absoluteY="0dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:textStyle="bold"
-                android:textSize="14sp"
+                android:text="SEGURIDAD EN EL TRABAJO"
                 android:textAlignment="center"
-                android:text="SEGURIDAD EN EL TRABAJO"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_width="379dp"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAsoandes"
-                android:lines="3"
-                android:layout_marginLeft="15dp"
-                android:textSize="15sp"
-                android:text="Elementos para el cuidado del personal y del medio ambiente"
-                ></TextView>
-            <Button
-                android:layout_width="140dp"
-                android:layout_height="45dp"
-                android:layout_gravity="right"
-                android:onClick="ir"
-                android:text="Ir a Totales"
-                android:textSize="14sp" />
-        </LinearLayout>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="379dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:lines="3"
+                    android:text="Elementos para el cuidado del personal y del medio ambiente"
+                    android:textColor="@color/colorAsoandes"
+                    android:textSize="15sp"></TextView>
+
+                <Button
+                    android:layout_width="140dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="right"
+                    android:onClick="ir"
+                    android:text="Ir a Totales"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/L1"
-                android:layout_marginTop="9dp"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="319dp"
-                android:background="@drawable/borderlayout">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical">
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/CON1ST"
+                    style="@style/spinner_style_und_medida"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:ems="10"
-                    android:textSize="14sp"
-                    style="@style/spinner_style_und_medida" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/CAN1ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="CANT"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/UM1ST"
                         style="@style/spinner_style_und_medida"
@@ -92,111 +100,122 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/VSug1ST"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_weight="1"
-                        />
+                        android:gravity="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VU1ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="VALOR UNITARIO"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VT1ST"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:textSize="13sp"
                         android:layout_weight="1"
-                        android:enabled="false"
-                        android:textColor="@color/gris"
                         android:background="@color/colorAprobado"
                         android:ems="10"
+                        android:enabled="false"
                         android:hint="VALOR TOTAL"
                         android:inputType="none"
                         android:singleLine="true"
-                        />
+                        android:textColor="@color/gris"
+                        android:textSize="13sp" />
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/C1"
                     android:layout_width="184dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton"
+                    android:onClick="calcular"
                     android:text="calcular"
-                    android:textSize="14sp"
-                    android:onClick="calcular"/>
+                    android:textSize="14sp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
                     android:text="FUENTE:"
-                    />
+                    android:textAlignment="center" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/PS1ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="number"
-                        android:textSize="14sp"
-
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="PS"
-                        android:singleLine="true" />
+
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/HO1ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="HOGAR"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </LinearLayout>
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
@@ -214,24 +233,27 @@
                     android:entries="@array/verificacion"
                     android:hint="VERIFICACION"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="14sp" /> -->
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/L2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/L1"
                 android:layout_marginTop="12dp"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="319dp"
-                android:background="@drawable/borderlayout">
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical">
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/CON2ST"
+                    style="@style/spinner_style_und_medida"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:ems="10"
-                    android:textSize="14sp"
-                    style="@style/spinner_style_und_medida" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -247,6 +269,7 @@
                         android:inputType="number"
                         android:singleLine="true"
                         android:textSize="14sp" />
+
                     <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/UM2ST"
                         style="@style/spinner_style_und_medida"
@@ -261,117 +284,129 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/VSug2ST"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_weight="1"
-                        />
+                        android:gravity="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VU2ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="VALOR UNITARIO"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VT2ST"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:textSize="13sp"
                         android:layout_weight="1"
-                        android:enabled="false"
-                        android:textColor="@color/gris"
                         android:background="@color/colorAprobado"
                         android:ems="10"
+                        android:enabled="false"
                         android:hint="VALOR TOTAL"
                         android:inputType="none"
                         android:singleLine="true"
-                         />
+                        android:textColor="@color/gris"
+                        android:textSize="13sp" />
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/C2"
                     android:layout_width="184dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton"
-                    android:textSize="14sp"
+                    android:onClick="calcular"
                     android:text="calcular"
-                    android:onClick="calcular"/>
+                    android:textSize="14sp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
                     android:text="FUENTE:"
-                    />
+                    android:textAlignment="center" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/PS2ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="PS"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/HO2ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+
+                        android:ems="10"
                         android:hint="HOGAR"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </LinearLayout>
-                <TextView
+
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
                     android:text="VERIFICACION:"
-                    />
+                    android:textAlignment="center" />
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/VERF2ST"
                     style="@style/spinner_style"
@@ -382,14 +417,14 @@
                     android:entries="@array/verificacion"
                     android:hint="VERIFICACION"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="14sp" /> -->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/L3"
                 android:layout_width="match_parent"
-                android:layout_height="319dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/L2"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/borderlayout"
@@ -397,11 +432,11 @@
 
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/CON3ST"
+                    style="@style/spinner_style_und_medida"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:ems="10"
-                    android:textSize="14sp"
-                    style="@style/spinner_style_und_medida" />
+                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -433,31 +468,35 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/VSug3ST"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_weight="1"
-                        />
+                        android:gravity="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VU3ST"
                         android:layout_width="match_parent"
@@ -468,34 +507,37 @@
                         android:inputType="number"
                         android:singleLine="true"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VT3ST"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:textSize="13sp"
                         android:layout_weight="1"
-                        android:ems="10"
-                        android:textColor="@color/gris"
                         android:background="@color/colorAprobado"
+                        android:ems="10"
                         android:enabled="false"
                         android:hint="VALOR TOTAL"
                         android:inputType="number"
                         android:singleLine="true"
-                         />
+                        android:textColor="@color/gris"
+                        android:textSize="13sp" />
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/C3"
                     android:layout_width="184dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton"
+                    android:onClick="calcular"
                     android:text="calcular"
-                    android:textSize="14sp"
-                    android:onClick="calcular"/>
+                    android:textSize="14sp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -507,10 +549,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/PS3ST"
                         android:layout_width="match_parent"
@@ -521,10 +565,12 @@
                         android:inputType="number"
                         android:singleLine="true"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/HO3ST"
                         android:layout_width="match_parent"
@@ -536,13 +582,14 @@
                         android:singleLine="true"
                         android:textSize="14sp" />
                 </LinearLayout>
-                <TextView
+
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
                     android:text="VERIFICACION:"
-                    />
+                    android:textAlignment="center" />
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/VERF3ST"
                     style="@style/spinner_style"
@@ -553,38 +600,43 @@
                     android:entries="@array/verificacion"
                     android:hint="VERIFICACION"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="14sp" />-->
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/L4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/L3"
                 android:layout_marginTop="12dp"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="319dp"
-                android:background="@drawable/borderlayout">
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical">
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/CON4ST"
+                    style="@style/spinner_style_und_medida"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
                     android:ems="10"
-                    android:textSize="14sp"
-                    style="@style/spinner_style_und_medida" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/CAN4ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="CANT"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/UM4ST"
                         style="@style/spinner_style_und_medida"
@@ -598,116 +650,129 @@
                         android:singleLine="true"
                         android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/VSug4ST"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_weight="1"
-                        />
+                        android:gravity="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VU4ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="VALOR UNITARIO"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/VT4ST"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:textSize="13sp"
-                        android:ems="10"
-                        android:textColor="@color/gris"
+                        android:layout_weight="1"
                         android:background="@color/colorAprobado"
+                        android:ems="10"
                         android:enabled="false"
+                        android:hint="VALOR TOTAL"
 
                         android:inputType="number"
-                        android:layout_weight="1"
-                        android:hint="VALOR TOTAL"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textColor="@color/gris"
+                        android:textSize="13sp" />
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/C4"
-                    android:textSize="14sp"
                     android:layout_width="184dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton"
+                    android:onClick="calcular"
                     android:text="calcular"
-                    android:onClick="calcular"/>
+                    android:textSize="14sp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
                     android:text="FUENTE:"
-                    />
+                    android:textAlignment="center" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/PS4ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="PS"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
                         android:id="@+id/HO4ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="HOGAR"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
                 </LinearLayout>
-                <TextView
+
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
                     android:text="VERIFICACION:"
-                    />
+                    android:textAlignment="center" />
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/VERF4ST"
                     style="@style/spinner_style"
@@ -718,43 +783,46 @@
                     android:entries="@array/verificacion"
                     android:hint="VERIFICACION"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
-
+                    android:textSize="14sp" /> -->
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/L5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/L4"
                 android:layout_marginTop="12dp"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="319dp"
-                android:background="@drawable/borderlayout">
+                android:background="@drawable/borderlayout"
+                android:orientation="vertical">
+
                 <EditText
                     android:id="@+id/CON5ST"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:textSize="14sp"
-                    android:inputType="text"
                     android:layout_weight="1"
+                    android:ems="10"
                     android:hint="CONCEPTO"
-                    android:singleLine="true" />
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/CAN5ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="CANT"
-                        android:singleLine="true" />
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/UM5ST"
                         style="@style/spinner_style_und_medida"
@@ -770,49 +838,7 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$"/>
-                    <EditText
-                        android:id="@+id/VU5ST"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
-                        android:layout_weight="1"
-                        android:hint="VALOR UNITARIO"
-                        android:singleLine="true" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$"/>
-                    <EditText
-                        android:id="@+id/VT5ST"
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:textSize="13sp"
-                        android:ems="10"
-                        android:background="@color/colorAprobado"
-                        android:enabled="false"
-                        android:textColor="@color/gris"
-                        android:inputType="number"
-                        android:layout_weight="1"
-                        android:hint="VALOR TOTAL"
-                        android:singleLine="true" />
-                </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
-                    android:textAlignment="center"
-                    android:text="FUENTE:"
-                    />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -821,39 +847,91 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
-                        android:id="@+id/PS5ST"
+                        android:id="@+id/VU5ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
                         android:layout_weight="1"
-                        android:hint="PS"
-                        android:singleLine="true" />
+                        android:ems="10"
+                        android:hint="VALOR UNITARIO"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$"/>
+                        android:text="$" />
+
                     <EditText
-                        android:id="@+id/HO5ST"
+                        android:id="@+id/VT5ST"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="14sp"
-                        android:inputType="number"
+                        android:layout_height="24dp"
                         android:layout_weight="1"
-                        android:hint="HOGAR"
-                        android:singleLine="true" />
+                        android:background="@color/colorAprobado"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:hint="VALOR TOTAL"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/gris"
+                        android:textSize="13sp" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:textAlignment="center"
+                    android:text="FUENTE:"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+
+                    <EditText
+                        android:id="@+id/PS5ST"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="PS"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$" />
+
+                    <EditText
+                        android:id="@+id/HO5ST"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="HOGAR"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!--<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
                     android:text="VERIFICACION:"
-                    />
+                    android:textAlignment="center" />
+
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/VERF5ST"
                     style="@style/spinner_style"
@@ -864,18 +942,20 @@
                     android:entries="@array/verificacion"
                     android:hint="VERIFICACION"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="14sp" /> -->
+
                 <Button
                     android:id="@+id/C5"
-                    android:textSize="14sp"
                     android:layout_width="184dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton"
+                    android:onClick="calcular"
                     android:text="calcular"
-                    android:onClick="calcular"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
+
             <Button
                 android:id="@+id/expandButton"
                 android:layout_width="220dp"
@@ -890,41 +970,46 @@
                 android:layout_height="0dp"
                 android:layout_weight="3"
                 android:background="@color/ic_launcher_background"
-                app:ael_expanded="false"
                 app:ael_duration="1000"
+                app:ael_expanded="false"
                 app:ael_interpolator="anticipateOvershoot">
+
                 <LinearLayout
                     android:id="@+id/L5_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/L4"
                     android:layout_marginTop="12dp"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="319dp"
-                    android:background="@drawable/borderlayout">
+                    android:background="@drawable/borderlayout"
+                    android:orientation="vertical">
+
                     <EditText
                         android:id="@+id/CON5_1ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:textSize="13sp"
-                        android:inputType="text"
                         android:layout_weight="1"
+                        android:ems="10"
                         android:hint="CONCEPTO"
-                        android:singleLine="true" />
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textSize="13sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <EditText
                             android:id="@+id/CAN5_1ST"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:textSize="13sp"
-                            android:inputType="number"
                             android:layout_weight="1"
+                            android:ems="10"
                             android:hint="CANT"
-                            android:singleLine="true" />
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textSize="13sp" />
+
                         <android.support.v7.widget.AppCompatSpinner
                             android:id="@+id/UM5_1ST"
                             style="@style/spinner_style_und_medida"
@@ -940,49 +1025,7 @@
                             android:textSize="13sp" />
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$"/>
-                        <EditText
-                            android:id="@+id/VU5_1ST"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:textSize="13sp"
-                            android:inputType="number"
-                            android:layout_weight="1"
-                            android:hint="VALOR UNITARIO"
-                            android:singleLine="true" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$"/>
-                        <EditText
-                            android:id="@+id/VT5_1ST"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:textSize="13sp"
-                            android:ems="10"
-                            android:background="@color/colorAprobado"
-                            android:enabled="false"
-                            android:textColor="@color/gris"
-                            android:inputType="number"
-                            android:layout_weight="1"
-                            android:hint="VALOR TOTAL"
-                            android:singleLine="true" />
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
-                        android:textAlignment="center"
-                        android:text="FUENTE:"
-                        />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -991,39 +1034,91 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$"/>
+                            android:text="$" />
+
                         <EditText
-                            android:id="@+id/PS5_1ST"
+                            android:id="@+id/VU5_1ST"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:textSize="13sp"
-                            android:inputType="number"
                             android:layout_weight="1"
-                            android:hint="PS"
-                            android:singleLine="true" />
+                            android:ems="10"
+                            android:hint="VALOR UNITARIO"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textSize="13sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$"/>
+                            android:text="$" />
+
                         <EditText
-                            android:id="@+id/HO5_1ST"
+                            android:id="@+id/VT5_1ST"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:textSize="13sp"
-                            android:inputType="number"
+                            android:layout_height="24dp"
                             android:layout_weight="1"
-                            android:hint="HOGAR"
-                            android:singleLine="true" />
+                            android:background="@color/colorAprobado"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="VALOR TOTAL"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textColor="@color/gris"
+                            android:textSize="13sp" />
                     </LinearLayout>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="9dp"
-                        android:textAlignment="center"
+                        android:text="FUENTE:"
+                        android:textAlignment="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$" />
+
+                        <EditText
+                            android:id="@+id/PS5_1ST"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="PS"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$" />
+
+                        <EditText
+                            android:id="@+id/HO5_1ST"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="HOGAR"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <!--<TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
                         android:text="VERIFICACION:"
-                        />
+                        android:textAlignment="center" />
+
                     <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/VERF5_1ST"
                         style="@style/spinner_style"
@@ -1034,104 +1129,112 @@
                         android:entries="@array/verificacion"
                         android:hint="VERIFICACION"
                         android:textAlignment="center"
-                        android:textSize="13sp" />
+                        android:textSize="13sp" /> -->
+
                     <Button
                         android:id="@+id/C5_1"
-                        android:textSize="13sp"
                         android:layout_width="184dp"
                         android:layout_height="38dp"
                         android:layout_gravity="center"
                         android:background="@drawable/boton"
+                        android:onClick="calcular"
                         android:text="calcular"
-                        android:onClick="calcular"/>
+                        android:textSize="13sp" />
                 </LinearLayout>
 
 
             </com.github.aakira.expandablelayout.ExpandableWeightLayout>
+
             <LinearLayout
                 android:id="@+id/L6"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
                 android:layout_below="@+id/L5"
                 android:layout_marginTop="12dp"
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="210dp"
-                android:background="@drawable/bordertotal">
+                android:background="@drawable/bordertotal"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TOTAL                             :"/>
+                        android:text="TOTAL                             :" />
+
                     <EditText
                         android:id="@+id/TOTAL_ST"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:hint="VALOR TOTAL"
                         android:inputType="number"
                         android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:hint="VALOR TOTAL"
-                        /></LinearLayout>
+                        android:textSize="14sp" />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TOTAL PS                       :"/>
+                        android:text="TOTAL PS                       :" />
 
                     <EditText
                         android:id="@+id/TOTAL_PS_ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="9dp"
+                        android:layout_weight="1"
+                        android:hint="TOTAL PS"
                         android:inputType="number"
                         android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:textSize="14sp"
-                        android:hint="TOTAL PS"
-                        />
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TOTAL HOGAR              :"/>
+                        android:text="TOTAL HOGAR              :" />
+
                     <EditText
                         android:id="@+id/TOTAL_HOGAR_ST"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="9dp"
-                        android:inputType="number"
                         android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
                         android:hint="TOTAL HOGAR"
-                        />
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
                 </LinearLayout>
-
 
 
             </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         android:background="@color/gris"
         app:itemBackground="@color/gris"

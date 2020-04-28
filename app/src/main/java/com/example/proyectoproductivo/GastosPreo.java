@@ -4,15 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -25,10 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.aakira.expandablelayout.ExpandableLayoutListenerAdapter;
-import com.github.aakira.expandablelayout.ExpandableLinearLayout;
-import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.github.aakira.expandablelayout.ExpandableWeightLayout;
-import com.riyagayasen.easyaccordion.AccordionExpansionCollapseListener;
 import com.riyagayasen.easyaccordion.AccordionView;
 
 import java.io.BufferedReader;
@@ -43,7 +39,9 @@ public class GastosPreo extends AppCompatActivity {
     EditText con5GP, con5_1GP, cant1GP, cant2GP, cant3GP, cant4GP, cant5GP, cant5_1GP, valU1GP, valU2GP, valU3GP, valU4GP, valU5GP, valU5_1GP;
     EditText valT1GP, valT2GP, valT3GP, valT4GP, valT5GP, valT5_1GP, fuentePs1GP, fuentePs2GP, fuentePs3GP, fuentePs4GP, fuentePs5GP, fuentePs5_1GP, fuenteHogar1GP, fuenteHogar2GP, fuenteHogar3GP, fuenteHogar4GP, fuenteHogar5GP, fuenteHogar5_1GP;
     EditText totalGP, total_psGP, total_hogarGP;//total_verifGP;
-    AppCompatSpinner ver1GP, ver2GP, ver3GP, ver4GP, ver5GP, ver5_1GP, undM1GP, undM2GP, undM3GP, undM4GP, undM5GP, undM5_1GP;
+    //Original DC
+    //AppCompatSpinner ver1GP, ver2GP, ver3GP, ver4GP, ver5GP, ver5_1GP, undM1GP, undM2GP, undM3GP, undM4GP, undM5GP, undM5_1GP;
+    private AppCompatSpinner undM1GP, undM2GP, undM3GP, undM4GP, undM5GP, undM5_1GP;
     int GT, GT_PS, GT_HOG;
     private AccordionView accordionViewOne;
     TextView VSug1, VSug2, VSug3, VSug4;
@@ -97,13 +95,14 @@ public class GastosPreo extends AppCompatActivity {
         VSug2 = findViewById(R.id.VSug2GP);
         VSug3 = findViewById(R.id.VSug3GP);
         VSug4 = findViewById(R.id.VSug4GP);
-
+        /* Comentado por Dayron - campo verificación
         ver1GP = findViewById(R.id.VERF1GP);
         ver2GP = findViewById(R.id.VERF2GP);
         ver3GP = findViewById(R.id.VERF3GP);
         ver4GP = findViewById(R.id.VERF4GP);
         ver5GP = findViewById(R.id.VERF5GP);
         ver5_1GP = findViewById(R.id.VERF5_1GP);
+         */
         valT1GP = findViewById(R.id.VT1GP);
         valT2GP = findViewById(R.id.VT2GP);
         valT3GP = findViewById(R.id.VT3GP);
@@ -498,411 +497,386 @@ public class GastosPreo extends AppCompatActivity {
 
             }
         });
-        ver1GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                editor = sharedPreferences.edit();
-                editorRD = sharedPreferencesRD.edit();
-                editor.putString("ver1GP", ver1GP.getSelectedItem().toString());
-                editorRD.putString("ver1GP", ver1GP.getSelectedItem().toString());
-                if (cant1GP.getText().toString().matches("")) {
-                } else {
+        /** Comentado por DC - Campo verificación
+         ver1GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        editor = sharedPreferences.edit();
+        editorRD = sharedPreferencesRD.edit();
+        editor.putString("ver1GP", ver1GP.getSelectedItem().toString());
+        editorRD.putString("ver1GP", ver1GP.getSelectedItem().toString());
+        if (cant1GP.getText().toString().matches("")) {
+        } else {
 
-                    if (!valU1GP.getText().toString().matches("")) {
-                        valT1GP.setText(String.valueOf(Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString())));
-                        try {
-                            GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + 0 + 0 + 0;
-                            GT_PS = Integer.parseInt(fuentePs1GP.getText().toString());
-                            GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString());
-                        } catch (Exception e) {
-                        }
-                        totalGP.setText(String.valueOf(GT));
-                        total_psGP.setText(String.valueOf(GT_PS));
-                        total_hogarGP.setText(String.valueOf(GT_HOG));
-                        editor.putString("valT1GP", valT1GP.getText().toString());
-                        editorRD.putString("valT1GP", valT1GP.getText().toString());
-                    } else {
-                        editor.putString("valT1GP", "");
-                        editorRD.putString("valT1GP", "");
-                    }
-                    editor.commit();
-                    editorRD.commit();
-                    //        Toast.makeText(AGPFijos.this, sharedPreferencesRD.getString("valT1GP", ""), Toast.LENGTH_LONG).show();
-                }
-            }
+        if (!valU1GP.getText().toString().matches("")) {
+        valT1GP.setText(String.valueOf(Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString())));
+        try {
+        GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + 0 + 0 + 0;
+        GT_PS = Integer.parseInt(fuentePs1GP.getText().toString());
+        GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString());
+        } catch (Exception e) {
+        }
+        totalGP.setText(String.valueOf(GT));
+        total_psGP.setText(String.valueOf(GT_PS));
+        total_hogarGP.setText(String.valueOf(GT_HOG));
+        editor.putString("valT1GP", valT1GP.getText().toString());
+        editorRD.putString("valT1GP", valT1GP.getText().toString());
+        } else {
+        editor.putString("valT1GP", "");
+        editorRD.putString("valT1GP", "");
+        }
+        editor.commit();
+        editorRD.commit();
+        //        Toast.makeText(AGPFijos.this, sharedPreferencesRD.getString("valT1GP", ""), Toast.LENGTH_LONG).show();
+        }
+        }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+        @Override public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
+        }
         });
+         ver2GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        editor = sharedPreferences.edit();
+        editorRD = sharedPreferencesRD.edit();
+        editor.putString("ver2GP", ver2GP.getSelectedItem().toString());
+        editorRD.putString("ver2GP", ver2GP.getSelectedItem().toString());
+        if (!cant2GP.getText().toString().matches("") && !cant1GP.getText().toString().matches("") && !valU2GP.getText().toString().matches("") && !valU1GP.getText().toString().matches("")) {
+        valT2GP.setText(String.valueOf(Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString())));
+        try {
+        GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString()) + 0 + 0;
+        GT_PS = Integer.parseInt(fuentePs1GP.getText().toString()) + Integer.parseInt(fuentePs2GP.getText().toString());
+        GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString()) + Integer.parseInt(fuenteHogar2GP.getText().toString());
+        } catch (Exception e) {
+        }
+        totalGP.setText(String.valueOf(GT));
+        total_psGP.setText(String.valueOf(GT_PS));
+        total_hogarGP.setText(String.valueOf(GT_HOG));
+        editor.putString("valT2GP", valT2GP.getText().toString());
+        editorRD.putString("valT2GP", valT2GP.getText().toString());
+        } else {
+        Toast.makeText(GastosPreo.this, "Complete todos los datos del 2do recuadro.", Toast.LENGTH_SHORT).show();
+        editor.putString("valT2GP", "");
+        editorRD.putString("valT2GP", "");
+        }
+        editor.commit();
+        editorRD.commit();
+        //        Toast.makeText(AGPFijos.this, sharedPreferencesRD.getString("valT1GP", ""), Toast.LENGTH_LONG).show();
 
-        ver2GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                editor = sharedPreferences.edit();
-                editorRD = sharedPreferencesRD.edit();
-                editor.putString("ver2GP", ver2GP.getSelectedItem().toString());
-                editorRD.putString("ver2GP", ver2GP.getSelectedItem().toString());
-                if (!cant2GP.getText().toString().matches("") && !cant1GP.getText().toString().matches("") && !valU2GP.getText().toString().matches("") && !valU1GP.getText().toString().matches("")) {
-                    valT2GP.setText(String.valueOf(Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString())));
-                    try {
-                        GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString()) + 0 + 0;
-                        GT_PS = Integer.parseInt(fuentePs1GP.getText().toString()) + Integer.parseInt(fuentePs2GP.getText().toString());
-                        GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString()) + Integer.parseInt(fuenteHogar2GP.getText().toString());
-                    } catch (Exception e) {
-                    }
-                    totalGP.setText(String.valueOf(GT));
-                    total_psGP.setText(String.valueOf(GT_PS));
-                    total_hogarGP.setText(String.valueOf(GT_HOG));
-                    editor.putString("valT2GP", valT2GP.getText().toString());
-                    editorRD.putString("valT2GP", valT2GP.getText().toString());
-                } else {
-                    Toast.makeText(GastosPreo.this, "Complete todos los datos del 2do recuadro.", Toast.LENGTH_SHORT).show();
-                    editor.putString("valT2GP", "");
-                    editorRD.putString("valT2GP", "");
-                }
-                editor.commit();
-                editorRD.commit();
-                //        Toast.makeText(AGPFijos.this, sharedPreferencesRD.getString("valT1GP", ""), Toast.LENGTH_LONG).show();
+        }
 
-            }
+        @Override public void onNothingSelected(AdapterView<?> adapterView) {
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+        }
         });
+         ver3GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        ver3GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        editor = sharedPreferences.edit();
+        editorRD = sharedPreferencesRD.edit();
+        editor.putString("ver3GP", ver3GP.getSelectedItem().toString());
+        editorRD.putString("ver3GP", ver3GP.getSelectedItem().toString());
+        if (cant3GP.getText().toString().matches("") || valU3GP.getText().toString().matches("")) {
+        Toast.makeText(GastosPreo.this, "Complete todos los datos del 3er recuadro.", Toast.LENGTH_LONG).show();
 
-                editor = sharedPreferences.edit();
-                editorRD = sharedPreferencesRD.edit();
-                editor.putString("ver3GP", ver3GP.getSelectedItem().toString());
-                editorRD.putString("ver3GP", ver3GP.getSelectedItem().toString());
-                if (cant3GP.getText().toString().matches("") || valU3GP.getText().toString().matches("")) {
-                    Toast.makeText(GastosPreo.this, "Complete todos los datos del 3er recuadro.", Toast.LENGTH_LONG).show();
+        } else {
 
-                } else {
+        if (!valU3GP.getText().toString().matches("")) {
+        valT3GP.setText(String.valueOf(Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString())));
+        editor.putString("valT3GP", valT3GP.getText().toString());
+        editorRD.putString("valT3GP", valT3GP.getText().toString());
+        if (!valU2GP.getText().toString().matches("") && !cant2GP.getText().toString().matches("")) {
+        try {
+        GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString()) + Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString()) + 0;
+        GT_PS = Integer.parseInt(fuentePs1GP.getText().toString()) + Integer.parseInt(fuentePs2GP.getText().toString()) + Integer.parseInt(fuentePs3GP.getText().toString());
+        GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString()) + Integer.parseInt(fuenteHogar2GP.getText().toString()) + Integer.parseInt(fuenteHogar3GP.getText().toString());
+        } catch (Exception e) {
+        }
+        totalGP.setText(String.valueOf(GT));
+        total_psGP.setText(String.valueOf(GT_PS));
+        total_hogarGP.setText(String.valueOf(GT_HOG));
+        }
+        } else {
+        editor.putString("valT3GP", "");
+        editorRD.putString("valT3GP", "");
+        }
+        editor.commit();
+        editorRD.commit();
+        }
+        }
 
-                    if (!valU3GP.getText().toString().matches("")) {
-                        valT3GP.setText(String.valueOf(Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString())));
-                        editor.putString("valT3GP", valT3GP.getText().toString());
-                        editorRD.putString("valT3GP", valT3GP.getText().toString());
-                        if (!valU2GP.getText().toString().matches("") && !cant2GP.getText().toString().matches("")) {
-                            try {
-                                GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString()) + Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString()) + 0;
-                                GT_PS = Integer.parseInt(fuentePs1GP.getText().toString()) + Integer.parseInt(fuentePs2GP.getText().toString()) + Integer.parseInt(fuentePs3GP.getText().toString());
-                                GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString()) + Integer.parseInt(fuenteHogar2GP.getText().toString()) + Integer.parseInt(fuenteHogar3GP.getText().toString());
-                            } catch (Exception e) {
-                            }
-                            totalGP.setText(String.valueOf(GT));
-                            total_psGP.setText(String.valueOf(GT_PS));
-                            total_hogarGP.setText(String.valueOf(GT_HOG));
-                        }
-                    } else {
-                        editor.putString("valT3GP", "");
-                        editorRD.putString("valT3GP", "");
-                    }
-                    editor.commit();
-                    editorRD.commit();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+        @Override public void onNothingSelected(AdapterView<?> adapterView) {
 
 
-            }
+        }
         });
+         ver4GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        editor = sharedPreferences.edit();
+        editorRD = sharedPreferencesRD.edit();
+        editor.putString("ver4GP", ver4GP.getSelectedItem().toString());
+        editorRD.putString("ver4GP", ver4GP.getSelectedItem().toString());
+        if (cant4GP.getText().toString().matches("") || valU4GP.getText().toString().matches("")) {
+        Toast.makeText(GastosPreo.this, "Complete todos los datos del 4to recuadro.", Toast.LENGTH_LONG).show();
+        } else {
 
-        ver4GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                editor = sharedPreferences.edit();
-                editorRD = sharedPreferencesRD.edit();
-                editor.putString("ver4GP", ver4GP.getSelectedItem().toString());
-                editorRD.putString("ver4GP", ver4GP.getSelectedItem().toString());
-                if (cant4GP.getText().toString().matches("") || valU4GP.getText().toString().matches("")) {
-                    Toast.makeText(GastosPreo.this, "Complete todos los datos del 4to recuadro.", Toast.LENGTH_LONG).show();
-                } else {
+        if (!valU4GP.getText().toString().matches("")) {
+        valT4GP.setText(String.valueOf(Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString())));
 
-                    if (!valU4GP.getText().toString().matches("")) {
-                        valT4GP.setText(String.valueOf(Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString())));
+        editor.putString("valT4GP", valT4GP.getText().toString());
+        editorRD.putString("valT4GP", valT4GP.getText().toString());
+        if (!valU2GP.getText().toString().matches("") && !valU3GP.getText().toString().matches("") && !cant2GP.getText().toString().matches("") && !cant3GP.getText().toString().matches("")) {
 
-                        editor.putString("valT4GP", valT4GP.getText().toString());
-                        editorRD.putString("valT4GP", valT4GP.getText().toString());
-                        if (!valU2GP.getText().toString().matches("") && !valU3GP.getText().toString().matches("") && !cant2GP.getText().toString().matches("") && !cant3GP.getText().toString().matches("")) {
+        try {
+        GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString()) + Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString()) + Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString());
+        GT_PS = Integer.parseInt(fuentePs1GP.getText().toString()) + Integer.parseInt(fuentePs2GP.getText().toString()) + Integer.parseInt(fuentePs3GP.getText().toString()) + Integer.parseInt(fuentePs4GP.getText().toString());
+        GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString()) + Integer.parseInt(fuenteHogar2GP.getText().toString()) + Integer.parseInt(fuenteHogar3GP.getText().toString()) + Integer.parseInt(fuenteHogar4GP.getText().toString());
+        } catch (Exception e) {
+        }
+        totalGP.setText(String.valueOf(GT));
+        total_psGP.setText(String.valueOf(GT_PS));
+        total_hogarGP.setText(String.valueOf(GT_HOG));
 
-                            try {
-                                GT = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString()) + Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString()) + Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString()) + Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString());
-                                GT_PS = Integer.parseInt(fuentePs1GP.getText().toString()) + Integer.parseInt(fuentePs2GP.getText().toString()) + Integer.parseInt(fuentePs3GP.getText().toString()) + Integer.parseInt(fuentePs4GP.getText().toString());
-                                GT_HOG = Integer.parseInt(fuenteHogar1GP.getText().toString()) + Integer.parseInt(fuenteHogar2GP.getText().toString()) + Integer.parseInt(fuenteHogar3GP.getText().toString()) + Integer.parseInt(fuenteHogar4GP.getText().toString());
-                            } catch (Exception e) {
-                            }
-                            totalGP.setText(String.valueOf(GT));
-                            total_psGP.setText(String.valueOf(GT_PS));
-                            total_hogarGP.setText(String.valueOf(GT_HOG));
+        }
+        } else {
+        editor.putString("valT4GP", "");
+        editorRD.putString("valT4GP", "");
+        }
+        editor.commit();
+        editorRD.commit();
+        //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
+        }
+        }
 
-                        }
-                    } else {
-                        editor.putString("valT4GP", "");
-                        editorRD.putString("valT4GP", "");
-                    }
-                    editor.commit();
-                    editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
-                }
-            }
+        @Override public void onNothingSelected(AdapterView<?> adapterView) {
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+        }
         });
-        ver5GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(GastosPreo.this, "Todo esta lleno?", Toast.LENGTH_LONG).show();
-                editor = sharedPreferences.edit();
-                editorRD = sharedPreferencesRD.edit();
-                editor.putString("ver5GP", ver5GP.getSelectedItem().toString());
-                editorRD.putString("ver5GP", ver5GP.getSelectedItem().toString());
-                if (cant5GP.getText().toString().matches("")) {
-                } else {
-                    int valorT1 = 0, valorT2 = 0, valorT3 = 0, valorT4 = 0, valorPS1 = 0, valorPS2 = 0, valorPS3 = 0, valorPS4 = 0, valorHogar1 = 0, valorHogar2 = 0, valorHogar3 = 0, valorHogar4 = 0;
-                    if (!valU5GP.getText().toString().matches("")) {
-                        valT5GP.setText(String.valueOf(Integer.parseInt(cant5GP.getText().toString()) * Integer.parseInt(valU5GP.getText().toString())));
+         ver5GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        Toast.makeText(GastosPreo.this, "Todo esta lleno?", Toast.LENGTH_LONG).show();
+        editor = sharedPreferences.edit();
+        editorRD = sharedPreferencesRD.edit();
+        editor.putString("ver5GP", ver5GP.getSelectedItem().toString());
+        editorRD.putString("ver5GP", ver5GP.getSelectedItem().toString());
+        if (cant5GP.getText().toString().matches("")) {
+        } else {
+        int valorT1 = 0, valorT2 = 0, valorT3 = 0, valorT4 = 0, valorPS1 = 0, valorPS2 = 0, valorPS3 = 0, valorPS4 = 0, valorHogar1 = 0, valorHogar2 = 0, valorHogar3 = 0, valorHogar4 = 0;
+        if (!valU5GP.getText().toString().matches("")) {
+        valT5GP.setText(String.valueOf(Integer.parseInt(cant5GP.getText().toString()) * Integer.parseInt(valU5GP.getText().toString())));
 
-                        editor.putString("valT5GP", valT5GP.getText().toString());
-                        editorRD.putString("valT5GP", valT5GP.getText().toString());
+        editor.putString("valT5GP", valT5GP.getText().toString());
+        editorRD.putString("valT5GP", valT5GP.getText().toString());
 
-                        if (valU1GP.getText().toString().matches("") && cant1GP.getText().toString().matches("")) {
-                            valorT1 = 0;
-                        } else {
-                            valorT1 = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString());
-                        }
-                        if (valU2GP.getText().toString().matches("") && cant2GP.getText().toString().matches("")) {
-                            valorT2 = 0;
-                        } else {
-                            valorT2 = Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString());
-                        }
-                        if (valU3GP.getText().toString().matches("") && cant3GP.getText().toString().matches("")) {
-                            valorT3 = 0;
-                        } else {
-                            valorT3 = Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString());
-                        }
-                        if (valU4GP.getText().toString().matches("") && cant4GP.getText().toString().matches("")) {
-                            valorT4 = 0;
-                        } else {
-                            valorT4 = Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString());
-                        }
+        if (valU1GP.getText().toString().matches("") && cant1GP.getText().toString().matches("")) {
+        valorT1 = 0;
+        } else {
+        valorT1 = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString());
+        }
+        if (valU2GP.getText().toString().matches("") && cant2GP.getText().toString().matches("")) {
+        valorT2 = 0;
+        } else {
+        valorT2 = Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString());
+        }
+        if (valU3GP.getText().toString().matches("") && cant3GP.getText().toString().matches("")) {
+        valorT3 = 0;
+        } else {
+        valorT3 = Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString());
+        }
+        if (valU4GP.getText().toString().matches("") && cant4GP.getText().toString().matches("")) {
+        valorT4 = 0;
+        } else {
+        valorT4 = Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString());
+        }
 
-                        if (fuentePs1GP.getText().toString().matches("")) {
-                            valorPS1 = 0;
-                        } else {
-                            valorPS1 = Integer.parseInt(fuentePs1GP.getText().toString());
-                        }
-                        if (fuentePs2GP.getText().toString().matches("")) {
-                            valorPS2 = 0;
-                        } else {
-                            valorPS2 = Integer.parseInt(fuentePs2GP.getText().toString());
-                        }
-                        if (fuentePs3GP.getText().toString().matches("")) {
-                            valorPS3 = 0;
-                        } else {
-                            valorPS3 = Integer.parseInt(fuentePs3GP.getText().toString());
-                        }
-                        if (fuentePs4GP.getText().toString().matches("")) {
-                            valorPS4 = 0;
-                        } else {
-                            valorPS4 = Integer.parseInt(fuentePs4GP.getText().toString());
-                        }
+        if (fuentePs1GP.getText().toString().matches("")) {
+        valorPS1 = 0;
+        } else {
+        valorPS1 = Integer.parseInt(fuentePs1GP.getText().toString());
+        }
+        if (fuentePs2GP.getText().toString().matches("")) {
+        valorPS2 = 0;
+        } else {
+        valorPS2 = Integer.parseInt(fuentePs2GP.getText().toString());
+        }
+        if (fuentePs3GP.getText().toString().matches("")) {
+        valorPS3 = 0;
+        } else {
+        valorPS3 = Integer.parseInt(fuentePs3GP.getText().toString());
+        }
+        if (fuentePs4GP.getText().toString().matches("")) {
+        valorPS4 = 0;
+        } else {
+        valorPS4 = Integer.parseInt(fuentePs4GP.getText().toString());
+        }
 
-                        if (fuenteHogar1GP.getText().toString().matches("")) {
-                            valorHogar1 = 0;
-                        } else {
-                            valorHogar1 = Integer.parseInt(fuenteHogar1GP.getText().toString());
-                        }
-                        if (fuenteHogar2GP.getText().toString().matches("")) {
-                            valorHogar2 = 0;
-                        } else {
-                            valorHogar2 = Integer.parseInt(fuenteHogar2GP.getText().toString());
-                        }
-                        if (fuenteHogar3GP.getText().toString().matches("")) {
-                            valorHogar3 = 0;
-                        } else {
-                            valorHogar3 = Integer.parseInt(fuenteHogar3GP.getText().toString());
-                        }
-                        if (fuenteHogar4GP.getText().toString().matches("")) {
-                            valorHogar4 = 0;
-                        } else {
-                            valorHogar4 = Integer.parseInt(fuenteHogar4GP.getText().toString());
-                        }
+        if (fuenteHogar1GP.getText().toString().matches("")) {
+        valorHogar1 = 0;
+        } else {
+        valorHogar1 = Integer.parseInt(fuenteHogar1GP.getText().toString());
+        }
+        if (fuenteHogar2GP.getText().toString().matches("")) {
+        valorHogar2 = 0;
+        } else {
+        valorHogar2 = Integer.parseInt(fuenteHogar2GP.getText().toString());
+        }
+        if (fuenteHogar3GP.getText().toString().matches("")) {
+        valorHogar3 = 0;
+        } else {
+        valorHogar3 = Integer.parseInt(fuenteHogar3GP.getText().toString());
+        }
+        if (fuenteHogar4GP.getText().toString().matches("")) {
+        valorHogar4 = 0;
+        } else {
+        valorHogar4 = Integer.parseInt(fuenteHogar4GP.getText().toString());
+        }
 
-                        try {
-                            GT = valorT1 + valorT2 + valorT3 + valorT4 + Integer.parseInt(cant5GP.getText().toString()) * Integer.parseInt(valU5GP.getText().toString());
-                            GT_PS = valorPS1 + valorPS2 + valorPS3 + valorPS4 + Integer.parseInt(fuentePs5GP.getText().toString());
-                            GT_HOG = valorHogar1 + valorHogar2 + valorHogar3 + valorHogar4 + Integer.parseInt(fuenteHogar5GP.getText().toString());
-                        } catch (Exception e) {
-                        }
-                        totalGP.setText(String.valueOf(GT));
-                        total_psGP.setText(String.valueOf(GT_PS));
-                        total_hogarGP.setText(String.valueOf(GT_HOG));
+        try {
+        GT = valorT1 + valorT2 + valorT3 + valorT4 + Integer.parseInt(cant5GP.getText().toString()) * Integer.parseInt(valU5GP.getText().toString());
+        GT_PS = valorPS1 + valorPS2 + valorPS3 + valorPS4 + Integer.parseInt(fuentePs5GP.getText().toString());
+        GT_HOG = valorHogar1 + valorHogar2 + valorHogar3 + valorHogar4 + Integer.parseInt(fuenteHogar5GP.getText().toString());
+        } catch (Exception e) {
+        }
+        totalGP.setText(String.valueOf(GT));
+        total_psGP.setText(String.valueOf(GT_PS));
+        total_hogarGP.setText(String.valueOf(GT_HOG));
 
 
-                    } else {
-                        editor.putString("valT5GP", "");
-                        editorRD.putString("valT5GP", "");
-                    }
-                    editor.commit();
-                    editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
-                }
-            }
+        } else {
+        editor.putString("valT5GP", "");
+        editorRD.putString("valT5GP", "");
+        }
+        editor.commit();
+        editorRD.commit();
+        //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
+        }
+        }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+        @Override public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
+        }
         });
-        ver5_1GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                editor = sharedPreferences.edit();
-                editorRD = sharedPreferencesRD.edit();
+         ver5_1GP.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        editor = sharedPreferences.edit();
+        editorRD = sharedPreferencesRD.edit();
 
-                if (cant5_1GP.getText().toString().matches("") || valU5_1GP.getText().toString().matches("")) {
-                    Toast.makeText(GastosPreo.this, "Revise que este todo completo", Toast.LENGTH_LONG).show();
-                } else {
-                    int valorT1 = 0, valorT2 = 0, valorT3 = 0, valorT4 = 0, valorT5 = 0, valorPS1 = 0, valorPS2 = 0, valorPS3 = 0, valorPS4 = 0, valorPS5 = 0, valorHogar1 = 0, valorHogar2 = 0, valorHogar3 = 0, valorHogar4 = 0, valorHogar5 = 0;
-                    if (!valU5_1GP.getText().toString().matches("")) {
-                        valT5_1GP.setText(String.valueOf(Integer.parseInt(cant5_1GP.getText().toString()) * Integer.parseInt(valU5_1GP.getText().toString())));
+        if (cant5_1GP.getText().toString().matches("") || valU5_1GP.getText().toString().matches("")) {
+        Toast.makeText(GastosPreo.this, "Revise que este todo completo", Toast.LENGTH_LONG).show();
+        } else {
+        int valorT1 = 0, valorT2 = 0, valorT3 = 0, valorT4 = 0, valorT5 = 0, valorPS1 = 0, valorPS2 = 0, valorPS3 = 0, valorPS4 = 0, valorPS5 = 0, valorHogar1 = 0, valorHogar2 = 0, valorHogar3 = 0, valorHogar4 = 0, valorHogar5 = 0;
+        if (!valU5_1GP.getText().toString().matches("")) {
+        valT5_1GP.setText(String.valueOf(Integer.parseInt(cant5_1GP.getText().toString()) * Integer.parseInt(valU5_1GP.getText().toString())));
 
-                        editor.putString("valT5_1GP", valT5_1GP.getText().toString());
-                        editorRD.putString("valT5_1GP", valT5_1GP.getText().toString());
+        editor.putString("valT5_1GP", valT5_1GP.getText().toString());
+        editorRD.putString("valT5_1GP", valT5_1GP.getText().toString());
 
-                        if (valU1GP.getText().toString().matches("") && cant1GP.getText().toString().matches("")) {
-                            valorT1 = 0;
-                        } else {
-                            valorT1 = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString());
-                        }
-                        if (valU2GP.getText().toString().matches("") && cant2GP.getText().toString().matches("")) {
-                            valorT2 = 0;
-                        } else {
-                            valorT2 = Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString());
-                        }
-                        if (valU3GP.getText().toString().matches("") && cant3GP.getText().toString().matches("")) {
-                            valorT3 = 0;
-                        } else {
-                            valorT3 = Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString());
-                        }
-                        if (valU4GP.getText().toString().matches("") && cant4GP.getText().toString().matches("")) {
-                            valorT4 = 0;
-                        } else {
-                            valorT4 = Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString());
-                        }
-                        if (valU5GP.getText().toString().matches("") && cant5GP.getText().toString().matches("")) {
-                            valorT5 = 0;
-                        } else {
-                            valorT5 = Integer.parseInt(cant5GP.getText().toString()) * Integer.parseInt(valU5GP.getText().toString());
-                        }
+        if (valU1GP.getText().toString().matches("") && cant1GP.getText().toString().matches("")) {
+        valorT1 = 0;
+        } else {
+        valorT1 = Integer.parseInt(cant1GP.getText().toString()) * Integer.parseInt(valU1GP.getText().toString());
+        }
+        if (valU2GP.getText().toString().matches("") && cant2GP.getText().toString().matches("")) {
+        valorT2 = 0;
+        } else {
+        valorT2 = Integer.parseInt(cant2GP.getText().toString()) * Integer.parseInt(valU2GP.getText().toString());
+        }
+        if (valU3GP.getText().toString().matches("") && cant3GP.getText().toString().matches("")) {
+        valorT3 = 0;
+        } else {
+        valorT3 = Integer.parseInt(cant3GP.getText().toString()) * Integer.parseInt(valU3GP.getText().toString());
+        }
+        if (valU4GP.getText().toString().matches("") && cant4GP.getText().toString().matches("")) {
+        valorT4 = 0;
+        } else {
+        valorT4 = Integer.parseInt(cant4GP.getText().toString()) * Integer.parseInt(valU4GP.getText().toString());
+        }
+        if (valU5GP.getText().toString().matches("") && cant5GP.getText().toString().matches("")) {
+        valorT5 = 0;
+        } else {
+        valorT5 = Integer.parseInt(cant5GP.getText().toString()) * Integer.parseInt(valU5GP.getText().toString());
+        }
 
-                        if (fuentePs1GP.getText().toString().matches("")) {
-                            valorPS1 = 0;
-                        } else {
-                            valorPS1 = Integer.parseInt(fuentePs1GP.getText().toString());
-                        }
-                        if (fuentePs2GP.getText().toString().matches("")) {
-                            valorPS2 = 0;
-                        } else {
-                            valorPS2 = Integer.parseInt(fuentePs2GP.getText().toString());
-                        }
-                        if (fuentePs3GP.getText().toString().matches("")) {
-                            valorPS3 = 0;
-                        } else {
-                            valorPS3 = Integer.parseInt(fuentePs3GP.getText().toString());
-                        }
-                        if (fuentePs4GP.getText().toString().matches("")) {
-                            valorPS4 = 0;
-                        } else {
-                            valorPS4 = Integer.parseInt(fuentePs4GP.getText().toString());
-                        }
-                        if (fuentePs5GP.getText().toString().matches("")) {
-                            valorPS5 = 0;
-                        } else {
-                            valorPS5 = Integer.parseInt(fuentePs5GP.getText().toString());
-                        }
+        if (fuentePs1GP.getText().toString().matches("")) {
+        valorPS1 = 0;
+        } else {
+        valorPS1 = Integer.parseInt(fuentePs1GP.getText().toString());
+        }
+        if (fuentePs2GP.getText().toString().matches("")) {
+        valorPS2 = 0;
+        } else {
+        valorPS2 = Integer.parseInt(fuentePs2GP.getText().toString());
+        }
+        if (fuentePs3GP.getText().toString().matches("")) {
+        valorPS3 = 0;
+        } else {
+        valorPS3 = Integer.parseInt(fuentePs3GP.getText().toString());
+        }
+        if (fuentePs4GP.getText().toString().matches("")) {
+        valorPS4 = 0;
+        } else {
+        valorPS4 = Integer.parseInt(fuentePs4GP.getText().toString());
+        }
+        if (fuentePs5GP.getText().toString().matches("")) {
+        valorPS5 = 0;
+        } else {
+        valorPS5 = Integer.parseInt(fuentePs5GP.getText().toString());
+        }
 
-                        if (fuenteHogar1GP.getText().toString().matches("")) {
-                            valorHogar1 = 0;
-                        } else {
-                            valorHogar1 = Integer.parseInt(fuenteHogar1GP.getText().toString());
-                        }
-                        if (fuenteHogar2GP.getText().toString().matches("")) {
-                            valorHogar2 = 0;
-                        } else {
-                            valorHogar2 = Integer.parseInt(fuenteHogar2GP.getText().toString());
-                        }
-                        if (fuenteHogar3GP.getText().toString().matches("")) {
-                            valorHogar3 = 0;
-                        } else {
-                            valorHogar3 = Integer.parseInt(fuenteHogar3GP.getText().toString());
-                        }
-                        if (fuenteHogar4GP.getText().toString().matches("")) {
-                            valorHogar4 = 0;
-                        } else {
-                            valorHogar4 = Integer.parseInt(fuenteHogar4GP.getText().toString());
-                        }
-                        if (fuenteHogar5GP.getText().toString().matches("")) {
-                            valorHogar5 = 0;
-                        } else {
-                            valorHogar5 = Integer.parseInt(fuenteHogar5GP.getText().toString());
-                        }
-
-
-                        try {
-                            GT = valorT1 + valorT2 + valorT3 + valorT4 + valorT5 + Integer.parseInt(cant5_1GP.getText().toString()) * Integer.parseInt(valU5_1GP.getText().toString());
-                            GT_PS = valorPS1 + valorPS2 + valorPS3 + valorPS4 + valorPS5 + Integer.parseInt(fuentePs5_1GP.getText().toString());
-                            GT_HOG = valorHogar1 + valorHogar2 + valorHogar3 + valorHogar4 + valorHogar5 + Integer.parseInt(fuenteHogar5_1GP.getText().toString());
-                        } catch (Exception e) {
-                        }
-                        totalGP.setText(String.valueOf(GT));
-                        total_psGP.setText(String.valueOf(GT_PS));
-                        total_hogarGP.setText(String.valueOf(GT_HOG));
+        if (fuenteHogar1GP.getText().toString().matches("")) {
+        valorHogar1 = 0;
+        } else {
+        valorHogar1 = Integer.parseInt(fuenteHogar1GP.getText().toString());
+        }
+        if (fuenteHogar2GP.getText().toString().matches("")) {
+        valorHogar2 = 0;
+        } else {
+        valorHogar2 = Integer.parseInt(fuenteHogar2GP.getText().toString());
+        }
+        if (fuenteHogar3GP.getText().toString().matches("")) {
+        valorHogar3 = 0;
+        } else {
+        valorHogar3 = Integer.parseInt(fuenteHogar3GP.getText().toString());
+        }
+        if (fuenteHogar4GP.getText().toString().matches("")) {
+        valorHogar4 = 0;
+        } else {
+        valorHogar4 = Integer.parseInt(fuenteHogar4GP.getText().toString());
+        }
+        if (fuenteHogar5GP.getText().toString().matches("")) {
+        valorHogar5 = 0;
+        } else {
+        valorHogar5 = Integer.parseInt(fuenteHogar5GP.getText().toString());
+        }
 
 
-                    } else {
-                        editor.putString("valT5_1GP", "");
-                        editorRD.putString("valT5_1GP", "");
-                    }
-                    editor.putString("ver5_1GP", ver5_1GP.getSelectedItem().toString());
-                    editorRD.putString("ver5_1GP", ver5_1GP.getSelectedItem().toString());
-                    editor.commit();
-                    editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
-                }
-            }
+        try {
+        GT = valorT1 + valorT2 + valorT3 + valorT4 + valorT5 + Integer.parseInt(cant5_1GP.getText().toString()) * Integer.parseInt(valU5_1GP.getText().toString());
+        GT_PS = valorPS1 + valorPS2 + valorPS3 + valorPS4 + valorPS5 + Integer.parseInt(fuentePs5_1GP.getText().toString());
+        GT_HOG = valorHogar1 + valorHogar2 + valorHogar3 + valorHogar4 + valorHogar5 + Integer.parseInt(fuenteHogar5_1GP.getText().toString());
+        } catch (Exception e) {
+        }
+        totalGP.setText(String.valueOf(GT));
+        total_psGP.setText(String.valueOf(GT_PS));
+        total_hogarGP.setText(String.valueOf(GT_HOG));
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
+        } else {
+        editor.putString("valT5_1GP", "");
+        editorRD.putString("valT5_1GP", "");
+        }
+        editor.putString("ver5_1GP", ver5_1GP.getSelectedItem().toString());
+        editorRD.putString("ver5_1GP", ver5_1GP.getSelectedItem().toString());
+        editor.commit();
+        editorRD.commit();
+        //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
+        }
+        }
+
+        @Override public void onNothingSelected(AdapterView<?> adapterView) {
+
+        }
         });
-
-        /*accordionViewOne.setOnExpandCollapseListener(new AccordionExpansionCollapseListener() {
-            @Override
-            public void onExpanded(AccordionView view) {
-
-            }
-            @Override
-            public void onCollapsed(AccordionView view) {
-
-            }
-        });*/
-
+         **/
 
         btnNV.getMenu().findItem(R.id.atras).setChecked(true);
         btnNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -1377,41 +1351,43 @@ if(undM4GP.getText().toString().matches("")) {editorRD.putString("undM4GP","");}
         valU5GP.setText(tipop17);
         valU5_1GP.setText(sharedPreferencesRD.getString("valU5_1GP", ""));
 
-        if (sharedPreferencesRD.getString("ver1GP", "").equals("Cumple")) {
-            ver1GP.setSelection(0);
-        } else {
-            ver1GP.setSelection(1);
-        }
-        String tipop18 = sharedPreferencesRD.getString("ver2GP", "");
-        if (tipop18.equals("Cumple")) {
-            ver2GP.setSelection(0);
-        } else {
-            ver2GP.setSelection(1);
-        }
-        String tipop19 = sharedPreferencesRD.getString("ver3GP", "");
-        if (tipop19.equals("Cumple")) {
-            ver3GP.setSelection(0);
-        } else {
-            ver3GP.setSelection(1);
-        }
-        String tipop20 = sharedPreferencesRD.getString("ver4GP", "");
-        if (tipop20.equals("Cumple")) {
-            ver4GP.setSelection(0);
-        } else {
-            ver4GP.setSelection(1);
-        }
-        String tipop20_1 = sharedPreferencesRD.getString("ver5GP", "");
-        if (tipop20_1.equals("Cumple")) {
-            ver5GP.setSelection(0);
-        } else {
-            ver5GP.setSelection(1);
-        }
-        String tipop20_2 = sharedPreferencesRD.getString("ver5_1GP", "");
-        if (tipop20_2.equals("Cumple")) {
-            ver5_1GP.setSelection(0);
-        } else {
-            ver5_1GP.setSelection(1);
-        }
+        /** Comentado por Dayron - campo verificación
+         if (sharedPreferencesRD.getString("ver1GP", "").equals("Cumple")) {
+         ver1GP.setSelection(0);
+         } else {
+         ver1GP.setSelection(1);
+         }
+         String tipop18 = sharedPreferencesRD.getString("ver2GP", "");
+         if (tipop18.equals("Cumple")) {
+         ver2GP.setSelection(0);
+         } else {
+         ver2GP.setSelection(1);
+         }
+         String tipop19 = sharedPreferencesRD.getString("ver3GP", "");
+         if (tipop19.equals("Cumple")) {
+         ver3GP.setSelection(0);
+         } else {
+         ver3GP.setSelection(1);
+         }
+         String tipop20 = sharedPreferencesRD.getString("ver4GP", "");
+         if (tipop20.equals("Cumple")) {
+         ver4GP.setSelection(0);
+         } else {
+         ver4GP.setSelection(1);
+         }
+         String tipop20_1 = sharedPreferencesRD.getString("ver5GP", "");
+         if (tipop20_1.equals("Cumple")) {
+         ver5GP.setSelection(0);
+         } else {
+         ver5GP.setSelection(1);
+         }
+         String tipop20_2 = sharedPreferencesRD.getString("ver5_1GP", "");
+         if (tipop20_2.equals("Cumple")) {
+         ver5_1GP.setSelection(0);
+         } else {
+         ver5_1GP.setSelection(1);
+         }
+         **/
 
         String tipop21 = sharedPreferencesRD.getString("valT1GP", "");
         valT1GP.setText(tipop21);
@@ -1593,7 +1569,8 @@ if(undM4GP.getText().toString().matches("")) {editorRD.putString("undM4GP","");}
 
                 editor = sharedPreferences.edit();
                 editorRD = sharedPreferencesRD.edit();
-                editor.putString("ver5GP", ver5GP.getSelectedItem().toString());
+                // Comentado por DC - Campo verificación
+                //editor.putString("ver5GP", ver5GP.getSelectedItem().toString());
                 if (cant5GP.getText().toString().matches("") || valU5GP.getText().toString().matches("")) {
                     Toast.makeText(GastosPreo.this, "Revise que este todo completo", Toast.LENGTH_LONG).show();
                 } else {
@@ -1796,11 +1773,12 @@ if(undM4GP.getText().toString().matches("")) {editorRD.putString("undM4GP","");}
                         editor.putString("valT5_1GP", "");
                         editorRD.putString("valT5_1GP", "");
                     }
+                    /* Comentado por DC - Campo verificación
                     editor.putString("ver5_1GP", ver5_1GP.getSelectedItem().toString());
                     editorRD.putString("ver5_1GP", ver5_1GP.getSelectedItem().toString());
+                    */
                     editor.commit();
                     editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
                 }
                 break;
         }

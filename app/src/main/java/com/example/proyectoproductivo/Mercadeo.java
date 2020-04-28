@@ -37,7 +37,9 @@ public class Mercadeo extends AppCompatActivity {
     EditText con5MER, con5_1MER, cant1MER, cant2MER, cant3MER, cant4MER, cant5MER, cant5_1MER, valU1MER, valU2MER, valU3MER, valU4MER, valU5MER, valU5_1MER;
     EditText valT1MER, valT2MER, valT3MER, valT4MER, valT5MER, valT5_1MER, fuentePs1MER, fuentePs2MER, fuentePs3MER, fuentePs4MER, fuentePs5MER, fuentePs5_1MER, fuenteHogar1MER, fuenteHogar2MER, fuenteHogar3MER, fuenteHogar4MER, fuenteHogar5MER, fuenteHogar5_1MER;
     EditText totalMER, total_psMER, total_hogarMER;//total_verifMER;
-    AppCompatSpinner ver1MER, ver2MER, ver3MER, ver4MER, ver5MER, ver5_1MER, undM1MER, undM2MER, undM3MER, undM4MER, undM5MER, undM5_1MER;
+    //Comentado por DC - Verificación
+    //AppCompatSpinner ver1MER, ver2MER, ver3MER, ver4MER, ver5MER, ver5_1MER, undM1MER, undM2MER, undM3MER, undM4MER, undM5MER, undM5_1MER;
+    private AppCompatSpinner undM1MER, undM2MER, undM3MER, undM4MER, undM5MER, undM5_1MER;
     Spinner con1MER, con2MER, con3MER, con4MER;
     TextView VSug1, VSug2, VSug3, VSug4;
     int GT, GT_PS, GT_HOG;
@@ -83,12 +85,14 @@ public class Mercadeo extends AppCompatActivity {
         valU4MER = findViewById(R.id.VU4MER);
         valU5MER = findViewById(R.id.VU5MER);
         valU5_1MER = findViewById(R.id.VU5_1MER);
+        /* Comentado por DC - Verificación
         ver1MER = findViewById(R.id.VERF1MER);
         ver2MER = findViewById(R.id.VERF2MER);
         ver3MER = findViewById(R.id.VERF3MER);
         ver4MER = findViewById(R.id.VERF4MER);
         ver5MER = findViewById(R.id.VERF5MER);
         ver5_1MER = findViewById(R.id.VERF5_1MER);
+        */
         valT1MER = findViewById(R.id.VT1MER);
         valT2MER = findViewById(R.id.VT2MER);
         valT3MER = findViewById(R.id.VT3MER);
@@ -455,6 +459,7 @@ public class Mercadeo extends AppCompatActivity {
 
             }
         });
+        /*Comentado por DC - Verificación
         ver1MER.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -493,7 +498,6 @@ public class Mercadeo extends AppCompatActivity {
 
             }
         });
-
         ver2MER.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -530,7 +534,6 @@ public class Mercadeo extends AppCompatActivity {
 
             }
         });
-
         ver3MER.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -574,7 +577,6 @@ public class Mercadeo extends AppCompatActivity {
 
             }
         });
-
         ver4MER.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -847,7 +849,7 @@ public class Mercadeo extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
         btnNV.getMenu().findItem(R.id.atras).setChecked(true);
         btnNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -1306,8 +1308,8 @@ public class Mercadeo extends AppCompatActivity {
         valU5MER.setText(sharedPreferencesRD.getString("valU5MER", ""));
         valU5_1MER.setText(sharedPreferencesRD.getString("valU5_1MER", ""));
 
+        /* Comentado por DC - Verificación
         String tipop17 = sharedPreferencesRD.getString("ver1MER", "");
-
         if (tipop17.equals("Cumple")) {
             ver1MER.setSelection(0);
         } else {
@@ -1342,7 +1344,7 @@ public class Mercadeo extends AppCompatActivity {
             ver5_1MER.setSelection(0);
         } else {
             ver5_1MER.setSelection(1);
-        }
+        }*/
 
         String tipop21 = sharedPreferencesRD.getString("valT1MER", "");
         valT1MER.setText(tipop21);
@@ -1719,15 +1721,14 @@ public class Mercadeo extends AppCompatActivity {
                         editor.putString("valT5_1MER", "");
                         editorRD.putString("valT5_1MER", "");
                     }
+                    /* Comentado por DC - Verificación
                     editor.putString("ver5_1MER", ver5_1MER.getSelectedItem().toString());
                     editorRD.putString("ver5_1MER", ver5_1MER.getSelectedItem().toString());
+                    */
                     editor.commit();
                     editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
                 }
                 break;
-
-
         }
     }
 

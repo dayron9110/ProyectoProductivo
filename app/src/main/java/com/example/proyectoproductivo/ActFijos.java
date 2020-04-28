@@ -42,11 +42,13 @@ public class ActFijos extends AppCompatActivity {
     Spinner con1AF, con2AF, con3AF, con4AF;
     Button ItemAdicional;
     ExpandableWeightLayout expandableLayout;
-    AppCompatSpinner ver1AF, ver2AF, ver3AF, ver4AF, ver5AF, ver5_1AF, undM1AF, undM2AF, undM3AF, undM4AF, undM5AF, undM5_1AF;
+    //Comentado por DC - Verificación
+    //AppCompatSpinner ver1AF, ver2AF, ver3AF, ver4AF, ver5AF, ver5_1AF, undM1AF, undM2AF, undM3AF, undM4AF, undM5AF, undM5_1AF;
+    private AppCompatSpinner undM1AF, undM2AF, undM3AF, undM4AF, undM5AF, undM5_1AF;
     EditText totalAF, total_psAF, total_hogarAF, total_verifAF;
     BottomNavigationView btnNV;
     TextView VSug1, VSug2, VSug3, VSug4;
-    HashMap<String, String> hm = new HashMap<String, String>();
+    HashMap<String, String> hm = new HashMap<>();
     private SharedPreferences sharedPreferences, sharedPreferencesRD, dataEncuenta;
     SharedPreferences.Editor editor, editorRD;
 
@@ -83,12 +85,14 @@ public class ActFijos extends AppCompatActivity {
         valU4AF = findViewById(R.id.VU4AF);
         valU5AF = findViewById(R.id.VU5AF);
         valU5_1AF = findViewById(R.id.VU5_1AF);
+        /*Comentado por DC - Verificación
         ver1AF = findViewById(R.id.VERF1AF);
         ver2AF = findViewById(R.id.VERF2AF);
         ver3AF = findViewById(R.id.VERF3AF);
         ver4AF = findViewById(R.id.VERF4AF);
         ver5AF = findViewById(R.id.VERF5AF);
         ver5_1AF = findViewById(R.id.VERF5_1AF);
+        */
         valT1AF = findViewById(R.id.VT1AF);
         valT2AF = findViewById(R.id.VT2AF);
         valT3AF = findViewById(R.id.VT3AF);
@@ -488,6 +492,7 @@ public class ActFijos extends AppCompatActivity {
 
             }
         });
+        /* Comentado por DC - Verificación
         ver1AF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -526,7 +531,6 @@ public class ActFijos extends AppCompatActivity {
 
             }
         });
-
         ver2AF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -563,7 +567,6 @@ public class ActFijos extends AppCompatActivity {
 
             }
         });
-
         ver3AF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -607,7 +610,6 @@ public class ActFijos extends AppCompatActivity {
 
             }
         });
-
         ver4AF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -881,6 +883,7 @@ public class ActFijos extends AppCompatActivity {
 
             }
         });
+         */
 
         btnNV.getMenu().findItem(R.id.atras).setChecked(true);
         btnNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -1216,6 +1219,7 @@ public class ActFijos extends AppCompatActivity {
                             } else {
                                 editorRD.putString("valU5_1AF", valU5_1AF.getText().toString());
                             }
+                            /*  Comentado por DC - Verificación
                             if (ver1AF.getSelectedItem().toString().matches("Cumple")) {
                                 editorRD.putString("ver1AF", ver1AF.getSelectedItem().toString());
 
@@ -1246,7 +1250,8 @@ public class ActFijos extends AppCompatActivity {
                                 editorRD.putString("ver5_1AF", "");
                             } else {
                                 editorRD.putString("ver5_1AF", ver5_1AF.getSelectedItem().toString());
-                            }
+                            }*/
+
                             if (fuentePs1AF.getText().toString().matches("")) {
                                 editorRD.putString("fuentePs1AF", "");
                             } else {
@@ -1420,7 +1425,7 @@ public class ActFijos extends AppCompatActivity {
         valU4AF.setText(tipop16);
         valU5AF.setText(sharedPreferencesRD.getString("valU5AF", ""));
         valU5_1AF.setText(sharedPreferencesRD.getString("valU5_1AF", ""));
-
+        /* Comentado por Dayron - Verificación
         String tipop17 = sharedPreferencesRD.getString("ver1AF", "");
         if (tipop17.equals("Cumple")) {
             ver1AF.setSelection(0);
@@ -1458,7 +1463,7 @@ public class ActFijos extends AppCompatActivity {
         } else {
             ver5_1AF.setSelection(1);
         }
-
+        */
         String tipop21 = sharedPreferencesRD.getString("valT1AF", "");
         valT1AF.setText(tipop21);
         String tipop22 = sharedPreferencesRD.getString("valT2AF", "");
@@ -1834,11 +1839,13 @@ public class ActFijos extends AppCompatActivity {
                         editor.putString("valT5_1AF", "");
                         editorRD.putString("valT5_1AF", "");
                     }
+                    /* Comentado por Dayron - Verificación
                     editor.putString("ver5_1AF", ver5_1AF.getSelectedItem().toString());
                     editorRD.putString("ver5_1AF", ver5_1AF.getSelectedItem().toString());
+                     */
+
                     editor.commit();
                     editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
                 }
                 break;
 

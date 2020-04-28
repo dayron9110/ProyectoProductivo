@@ -43,7 +43,9 @@ public class SegTrabajo extends AppCompatActivity {
     Spinner con1ST, con2ST, con3ST, con4ST;
     TextView VSug1, VSug2, VSug3, VSug4;
     HashMap<String, String> hm = new HashMap<String, String>();
-    AppCompatSpinner ver1ST, ver2ST, ver3ST, ver4ST, ver5ST, ver5_1ST, undM1ST, undM2ST, undM3ST, undM4ST, undM5ST, undM5_1ST;
+    //Comentado por DC - Verificación
+    //AppCompatSpinner ver1ST, ver2ST, ver3ST, ver4ST, ver5ST, ver5_1ST, undM1ST, undM2ST, undM3ST, undM4ST, undM5ST, undM5_1ST;
+    private AppCompatSpinner undM1ST, undM2ST, undM3ST, undM4ST, undM5ST, undM5_1ST;
     BottomNavigationView btnNV;
     Button ItemAdicional;
     ExpandableWeightLayout expandableLayout;
@@ -83,12 +85,14 @@ public class SegTrabajo extends AppCompatActivity {
         valU4ST = findViewById(R.id.VU4ST);
         valU5ST = findViewById(R.id.VU5ST);
         valU5_1ST = findViewById(R.id.VU5_1ST);
+        /*Comentado por DC - Verificación
         ver1ST = findViewById(R.id.VERF1ST);
         ver2ST = findViewById(R.id.VERF2ST);
         ver3ST = findViewById(R.id.VERF3ST);
         ver4ST = findViewById(R.id.VERF4ST);
         ver5ST = findViewById(R.id.VERF5ST);
         ver5_1ST = findViewById(R.id.VERF5_1ST);
+        */
         valT1ST = findViewById(R.id.VT1ST);
         valT2ST = findViewById(R.id.VT2ST);
         valT3ST = findViewById(R.id.VT3ST);
@@ -472,6 +476,7 @@ public class SegTrabajo extends AppCompatActivity {
 
             }
         });
+        /* Comentado por DC - Verificación
         ver1ST.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -510,7 +515,6 @@ public class SegTrabajo extends AppCompatActivity {
 
             }
         });
-
         ver2ST.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -547,7 +551,6 @@ public class SegTrabajo extends AppCompatActivity {
 
             }
         });
-
         ver3ST.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -591,7 +594,6 @@ public class SegTrabajo extends AppCompatActivity {
 
             }
         });
-
         ver4ST.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -865,6 +867,7 @@ public class SegTrabajo extends AppCompatActivity {
 
             }
         });
+        */
         btnNV.getMenu().findItem(R.id.atras).setChecked(true);
         btnNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -1321,6 +1324,7 @@ public class SegTrabajo extends AppCompatActivity {
         valU4ST.setText(tipop16);
         valU5ST.setText(sharedPreferencesRD.getString("valU5ST", ""));
         valU5_1ST.setText(sharedPreferencesRD.getString("valU5_1ST", ""));
+        /* Comentado por DC - Verificación
         String tipop17 = sharedPreferencesRD.getString("ver1ST", "");
         if (tipop17.equals("Cumple")) {
             ver1ST.setSelection(0);
@@ -1356,7 +1360,7 @@ public class SegTrabajo extends AppCompatActivity {
             ver5_1ST.setSelection(0);
         } else {
             ver5_1ST.setSelection(1);
-        }
+        }*/
         String tipop21 = sharedPreferencesRD.getString("valT1ST", "");
         valT1ST.setText(tipop21);
         String tipop22 = sharedPreferencesRD.getString("valT2ST", "");
@@ -1734,11 +1738,11 @@ public class SegTrabajo extends AppCompatActivity {
                         editor.putString("valT5_1ST", "");
                         editorRD.putString("valT5_1ST", "");
                     }
+                    /* Comentado por DC - Verificación
                     editor.putString("ver5_1ST", ver5_1ST.getSelectedItem().toString());
-                    editorRD.putString("ver5_1ST", ver5_1ST.getSelectedItem().toString());
+                    editorRD.putString("ver5_1ST", ver5_1ST.getSelectedItem().toString());*/
                     editor.commit();
                     editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
                 }
                 break;
 

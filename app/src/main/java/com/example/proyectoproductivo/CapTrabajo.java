@@ -43,7 +43,9 @@ public class CapTrabajo extends AppCompatActivity {
     Button ItemAdicional;
     ExpandableWeightLayout expandableLayout;
     TextView VSug1, VSug2, VSug3, VSug4;
-    AppCompatSpinner ver1CT, ver2CT, ver3CT, ver4CT, ver5CT, ver5_1CT, undM1CT, undM2CT, undM3CT, undM4CT, undM5CT, undM5_1CT;
+    // original comentado por Dayron
+    //AppCompatSpinner ver1CT, ver2CT, ver3CT, ver4CT, ver5CT, ver5_1CT, undM1CT, undM2CT, undM3CT, undM4CT, undM5CT, undM5_1CT;
+    private AppCompatSpinner undM1CT, undM2CT, undM3CT, undM4CT, undM5CT, undM5_1CT;
     BottomNavigationView btnNV;
     String ShaPreSector;
     private SharedPreferences sharedPreferences, sharedPreferencesRD, dataEncuenta;
@@ -83,12 +85,15 @@ public class CapTrabajo extends AppCompatActivity {
         valU4CT = findViewById(R.id.VU4CT);
         valU5CT = findViewById(R.id.VU5CT);
         valU5_1CT = findViewById(R.id.VU5_1CT);
+
+        /* Comentado por DC - Verificación
         ver1CT = findViewById(R.id.VERF1CT);
         ver2CT = findViewById(R.id.VERF2CT);
         ver3CT = findViewById(R.id.VERF3CT);
         ver4CT = findViewById(R.id.VERF4CT);
         ver5CT = findViewById(R.id.VERF5CT);
         ver5_1CT = findViewById(R.id.VERF5_1CT);
+        */
         valT1CT = findViewById(R.id.VT1CT);
         valT2CT = findViewById(R.id.VT2CT);
         valT3CT = findViewById(R.id.VT3CT);
@@ -484,7 +489,8 @@ public class CapTrabajo extends AppCompatActivity {
 
             }
         });
-        ver1CT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*Comentado por DC - Verificación
+         ver1CT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 editor = sharedPreferences.edit();
@@ -522,7 +528,6 @@ public class CapTrabajo extends AppCompatActivity {
 
             }
         });
-
         ver2CT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -559,7 +564,6 @@ public class CapTrabajo extends AppCompatActivity {
 
             }
         });
-
         ver3CT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -603,7 +607,6 @@ public class CapTrabajo extends AppCompatActivity {
 
             }
         });
-
         ver4CT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -877,7 +880,7 @@ public class CapTrabajo extends AppCompatActivity {
 
             }
         });
-
+        */
         btnNV.getMenu().findItem(R.id.atras).setChecked(true);
         btnNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -1380,6 +1383,7 @@ public class CapTrabajo extends AppCompatActivity {
         valU5CT.setText(sharedPreferencesRD.getString("valU5CT", ""));
         valU5_1CT.setText(sharedPreferencesRD.getString("valU5_1CT", ""));
         String tipop17 = sharedPreferencesRD.getString("ver1CT", "");
+        /* Comentado por DC - Verificación
         if (tipop17.equals("Cumple")) {
             ver1CT.setSelection(0);
         } else {
@@ -1415,7 +1419,7 @@ public class CapTrabajo extends AppCompatActivity {
         } else {
             ver5_1CT.setSelection(1);
         }
-
+        */
         String tipop21 = sharedPreferencesRD.getString("valT1CT", "");
         valT1CT.setText(tipop21);
         String tipop22 = sharedPreferencesRD.getString("valT2CT", "");
@@ -1788,11 +1792,12 @@ public class CapTrabajo extends AppCompatActivity {
                         editor.putString("valT5_1CT", "");
                         editorRD.putString("valT5_1CT", "");
                     }
+                    /* Comentado por DC - Verificación
                     editor.putString("ver5_1CT", ver5_1CT.getSelectedItem().toString());
                     editorRD.putString("ver5_1CT", ver5_1CT.getSelectedItem().toString());
+                    */
                     editor.commit();
                     editorRD.commit();
-                    //        Toast.makeText(ActFijos.this, sharedPreferencesRD.getString("valT1AF", ""), Toast.LENGTH_LONG).show();
                 }
                 break;
 
